@@ -9,6 +9,19 @@ module.exports = {
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#007aff`,
+        showSpinner: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
@@ -49,11 +62,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Sean Groffs Blog`,
+        short_name: `SeanGroff`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#f8f7f4`,
+        theme_color: `#007aff`,
         display: `minimal-ui`,
         icon: `src/assets/gatsby-icon.png`,
       },
