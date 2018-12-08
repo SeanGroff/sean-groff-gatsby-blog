@@ -8,12 +8,7 @@ module.exports = {
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    },
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
