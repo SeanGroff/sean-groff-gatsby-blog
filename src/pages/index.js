@@ -22,7 +22,7 @@ class BlogIndex extends PureComponent {
         <Global
           styles={css`
             body {
-              background: ${theme.colors.offWhite};
+              background: ${theme.colors.white};
             }
             a {
               color: ${theme.colors.primary};
