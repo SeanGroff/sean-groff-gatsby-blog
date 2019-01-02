@@ -6,6 +6,8 @@ tags: [react, prettier, flow, eslint, vscode, react-native]
 photo: 'https://cdn-images-1.medium.com/max/2000/1*XWrSVbejdBuOjHilYYlvhQ.jpeg'
 ---
 
+### Intro
+
 This short guide will provide you a consistent and reusable development workflow for all [**React**][1]/[**React Native**][2] projects. The more effort you put into writing quality code, the less time you spend on debugging. You can increase your code quality and reduce the time spent on debugging with a consistent development workflow. In this guide I will show you how to configure your editor to handle your code formatting, linting, and type checking.
 
 Test Driven Development and a preconfigured build configuration are recommended. I won't go into much detail on either of these. I recommend [**create-react-app**][4] for the web and using the [**React Native CLI**][5] for mobile development. Both require zero build configuration. [**Jest**][6] is fantastic for testing [**React**][1].

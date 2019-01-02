@@ -5,6 +5,8 @@ categories: react
 tags: [react]
 ---
 
+### React
+
 What is this React you speak of? If you're reading this article I assume you've heard of React and have a basic understanding of what it is.
 
 ---
