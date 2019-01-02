@@ -6,10 +6,14 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import TwitterShare from '../components/TwitterShare'
 import { rhythm, scale } from '../utils/typography'
+import theme from '../utils/theme'
+import '../styles/theme.css'
 
 class BlogPostTemplate extends PureComponent {
   componentDidMount() {
-    twttr.widgets.load()
+    if (twttr && twttr.widgets) {
+      twttr.widgets.load()
+    }
   }
 
   render() {
@@ -46,14 +50,22 @@ class BlogPostTemplate extends PureComponent {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link
+                to={previous.fields.slug}
+                rel="prev"
+                style={{ boxShadow: 'none', color: `${theme.colors.primary}` }}
+              >
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link
+                to={next.fields.slug}
+                rel="next"
+                style={{ boxShadow: 'none', color: `${theme.colors.primary}` }}
+              >
                 {next.frontmatter.title} →
               </Link>
             )}

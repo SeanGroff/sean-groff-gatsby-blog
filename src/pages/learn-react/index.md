@@ -13,7 +13,7 @@ What is this React you speak of? If you're reading this article I assume you've 
 
 TL;DR React is a JavaScript library created by Facebook for building user interfaces.
 
-## Getting Started
+### Getting Started
 
 Thanks to [**Create-React-App**][1] you can get started learning React without first learning [**Webpack**][2]. [**CodeSandbox**][3] allows you to build JavaScript projects inside your browser without any build setup. I highly recommend it!
 
@@ -31,7 +31,7 @@ It's very important when building React applications to **"Think in React"**.
 
 Take the time to identify reusable components, stateful and stateless components. [**Thinking in React**][6] does a great job of teaching you how to accomplish this task. Components, props, state, render, blah blah blah you'll understand all this React speak after you start coding.
 
-## Want to code?
+### Want to code?
 
 Ok, you're tired of reading and want to code? Fire up a new React Project in [**CodeSandbox**][3].
 
@@ -97,7 +97,7 @@ Here is the link to the **freeCodeCamp** challenge. [**Build a Camper Leaderboar
 
 **Pro-tip** Use [**Axios**][19] to perform your _GET_ requests to access the Leaderboard data.
 
-## Congrats!
+### Congrats!
 
 If you've made it to the part in the article you've hopefully completed all 5 React challenges. If you didn't keep at it, this could take you a week or so.
 

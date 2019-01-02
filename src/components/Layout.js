@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import Footer from './Footer'
 import { rhythm, scale } from '../utils/typography'
+import theme from '../utils/theme'
 
 class Layout extends React.Component {
   render() {
@@ -22,7 +24,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: 'none',
               textDecoration: 'none',
-              color: 'inherit',
+              color: `${theme.colors.primary}`,
             }}
             to={'/'}
           >
@@ -43,7 +45,7 @@ class Layout extends React.Component {
             style={{
               boxShadow: 'none',
               textDecoration: 'none',
-              color: 'inherit',
+              color: `${theme.colors.primary}`,
             }}
             to={'/'}
           >
@@ -63,6 +65,7 @@ class Layout extends React.Component {
       >
         {header}
         {children}
+        <Footer />
       </div>
     )
   }

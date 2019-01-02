@@ -26,12 +26,12 @@ class Bio extends React.Component {
             borderRadius: '50%',
           }}
         />
-        <div style={{ display: 'flex', flexDirection: 'column'}}>
-        <p style={{marginBottom: rhythm(0.25)}}>
-          Written by <strong>Sean Groff</strong> who lives and works in Kansas
-          City as a Software Engineer.{' '}
-        </p>
-        <TwitterFollow />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <p style={{ marginBottom: rhythm(0.25) }}>
+            Written by <strong>Sean Groff</strong> who lives and works in Kansas
+            City as a Software Engineer.{' '}
+          </p>
+          <TwitterFollow />
         </div>
       </div>
     )

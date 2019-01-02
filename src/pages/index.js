@@ -8,9 +8,14 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm } from '../utils/typography'
 import theme from '../utils/theme'
-import '../styles/theme.css'
 
 class BlogIndex extends PureComponent {
+  componentDidMount() {
+    if (twttr && twttr.widgets) {
+      twttr.widgets.load()
+    }
+  }
+
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -40,16 +45,22 @@ class BlogIndex extends PureComponent {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
+                <h3 style={{ marginBottom: rhythm(1 / 4) }}>
                   <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>
+                <small style={{ paddingRight: '4px' }}>
+                  {node.frontmatter.date}
+                </small>
+                <span>
+                  {Array.from(
+                    Array(Math.floor(node.timeToRead / 2)),
+                    (_, index) => (
+                      <span key={index}>🤓</span>
+                    )
+                  )}
+                </span>
                 <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
               </div>
             )
@@ -81,6 +92,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
           }
+          timeToRead
         }
       }
     }
