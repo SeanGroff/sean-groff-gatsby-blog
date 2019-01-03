@@ -3,7 +3,6 @@ title: 'Configure ESLint, Prettier, and Flow in VS Code for React Development'
 date: '2017-05-08'
 categories: react
 tags: [react, prettier, flow, eslint, vscode, react-native]
-photo: 'https://cdn-images-1.medium.com/max/2000/1*XWrSVbejdBuOjHilYYlvhQ.jpeg'
 ---
 
 ### Intro
@@ -252,7 +251,6 @@ Happy coding! 😀
 [10]: http://eslint.org/
 [11]: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb#eslint-config-airbnb-1
 [12]: https://www.npmjs.com/package/babel-eslint
-[13]: https://cdn-images-1.medium.com/max/1600/1*m-k5hilRmrBndayiiXgh_g.png
 [14]: https://www.npmjs.com/package/prettier-eslint
 [15]: https://github.com/prettier/prettier
 [16]: https://code.visualstudio.com/docs/getstarted/settings
@@ -264,15 +262,6 @@ Happy coding! 😀
 [22]: https://www.npmjs.com/package/babel-preset-flow
 [24]: https://github.com/flowtype/flow-for-vscode#known-issues
 [25]: https://docs.npmjs.com/cli/run-script
-[26]: https://cdn-images-1.medium.com/max/1600/1*5KwwpUDuCTKgRnSTCX9UEw.png
-[27]: https://cdn-images-1.medium.com/max/1600/1*O0iRPCwesD1I0L-fxF0JEQ.png
 [28]: https://flow.org/en/docs/cli/
 [29]: http://stackoverflow.com/questions/43580919/why-does-react-natives-flowconfig-ignores-android-js-files/43600195#43600195
-[30]: https://cdn-images-1.medium.com/max/1600/1*zRK0fIblNtfxdn5k4JJX-A.png
-[31]: https://cdn-images-1.medium.com/max/1600/1*lDFlIg-z64vuZCc2jfJ9KA.png
-[32]: https://cdn-images-1.medium.com/max/1600/1*gHU4lyr9qYq4Zbrl4ttD5A.png
-[33]: https://cdn-images-1.medium.com/max/1600/1*oh4ZbQ5B8lo7za4HUPs8vA.png
-[34]: https://cdn-images-1.medium.com/max/1600/1*bAZyAPy6462wHf7x9_zO8g.png
-[35]: https://cdn-images-1.medium.com/max/1600/1*wMpaZTsh2U31eDR1NznA1w.png
 [36]: https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode
-[37]: https://cdn-images-1.medium.com/max/1600/1*5H00ZXNlCEiECbBx7WhA4g.png

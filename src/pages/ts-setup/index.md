@@ -3,7 +3,6 @@ title: 'Configure TypeScript, TSLint, and Prettier in VS Code for React Native D
 date: '2018-07-13'
 categories: react
 tags: [react, prettier, typescript, eslint, vscode, react-native]
-photo: 'https://cdn-images-1.medium.com/max/2000/1*hEbJvltnslRrdEzjWQ7Img.jpeg'
 ---
 
 ### Introduction
