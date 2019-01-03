@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, withPrefix } from 'gatsby'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from 'emotion-theming'
 import { Global, css } from '@emotion/core'
@@ -39,6 +39,13 @@ class BlogIndex extends PureComponent {
             htmlAttributes={{ lang: 'en' }}
             meta={[{ name: 'description', content: siteDescription }]}
             title={siteTitle}
+            link={[
+              {
+                rel: 'shortcut icon',
+                type: 'image/png',
+                href: 'favicon.ico',
+              },
+            ]}
           />
           <Bio />
           {posts.map(({ node }) => {
