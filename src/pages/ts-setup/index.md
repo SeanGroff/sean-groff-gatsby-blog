@@ -28,8 +28,8 @@ Once you have [**VS Code**][4] open, click the Extensions button in the Activity
 
 Install the following extensions:
 
-* [**Prettier Code Formatter**][6]
-* [**TSLint**][7]
+- [**Prettier Code Formatter**][6]
+- [**TSLint**][7]
 
 ### TypeScript Setup
 
@@ -43,11 +43,11 @@ First let's install and setup TypeScript for our React Native app by entering th
 
 Here's what we just did:
 
-* installed TypeScript to our project as a dev dependency
-* installed [**React Native TypeScript Transformer**][9] to our project as a dev dependency to seamlessly use TypeScript with react-native
-* initialize an empty TypeScript config file, which we'll configure next
-* create an empty React Native TypeScript Transformer config file, which we'll configure shortly
-* install [**typings**][10] for React and React Native allowing TypeScript to type check our React Native code
+- installed TypeScript to our project as a dev dependency
+- installed [**React Native TypeScript Transformer**][9] to our project as a dev dependency to seamlessly use TypeScript with react-native
+- initialize an empty TypeScript config file, which we'll configure next
+- create an empty React Native TypeScript Transformer config file, which we'll configure shortly
+- install [**typings**][10] for React and React Native allowing TypeScript to type check our React Native code
 
 ### Configure TypeScript
 
@@ -93,9 +93,9 @@ module.exports = {
 
 Rename the generated **App.js f**ile in our project to **App.tsx**.
 
-> ****NOTE**** **index.js **needs to use the **.js **extension.
+> **NOTE** **index.js** needs to use the **.js** extension.
 
-All new files containing JSX should use the **.tsx **extension and the **.ts** extension for plain JavaScript files.
+All new files containing JSX should use the **.tsx** extension and the **.ts** extension for plain JavaScript files.
 
 > Now is a great time to go through your existing **.tsx** and **.ts** files and fix any TypeScript errors.
 
@@ -105,7 +105,7 @@ First, let's install **TSLint** and some **TSLint** extensions I personally pref
 
 `$ yarn add --dev tslint tslint-config-prettier tsling-config-standard tslint-react`
 
-* added **tslint-config-prettier** so **tslint** and **prettier** won't fight over code formatting rules.
+- added **tslint-config-prettier** so **tslint** and **prettier** won't fight over code formatting rules.
 
 You should now see a **tslint.json** file in your project.
 
