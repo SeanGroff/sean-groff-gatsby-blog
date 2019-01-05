@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
-import { Link, graphql, withPrefix } from 'gatsby'
-import Helmet from 'react-helmet'
+import { Link, graphql } from 'gatsby'
 import { ThemeProvider } from 'emotion-theming'
 import { Global, css } from '@emotion/core'
 
+import SEO from '../components/SEO'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm } from '../utils/typography'
@@ -34,19 +34,8 @@ class BlogIndex extends PureComponent {
             }
           `}
         />
-        <Layout location={this.props.location} title={siteTitle}>
-          <Helmet
-            htmlAttributes={{ lang: 'en' }}
-            meta={[{ name: 'description', content: siteDescription }]}
-            title={siteTitle}
-            link={[
-              {
-                rel: 'shortcut icon',
-                type: 'image/png',
-                href: 'favicon.ico',
-              },
-            ]}
-          />
+        <Layout location={this.props.location} title="Sean Groff">
+          <SEO description={siteDescription} title={siteTitle} />
           <Bio />
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug

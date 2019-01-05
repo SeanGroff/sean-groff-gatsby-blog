@@ -23,8 +23,8 @@ class Bio extends React.Component {
         />
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <p style={{ marginBottom: rhythm(0.25) }}>
-            Written by <strong>Sean Groff</strong>, a Software Engineer in
-            Kansas City passionate about React and JavaScript.{' '}
+            I am <strong>Sean</strong>, a Software Engineer in Kansas City
+            passionate about React and JavaScript.{' '}
           </p>
           <TwitterFollow />
         </div>

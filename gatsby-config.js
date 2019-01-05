@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'SeanGroff.com',
+    title:
+      'Sean Groff | Web Developer creating awesome content for JavaScript and React',
     author: 'Sean Groff',
     description:
-      'My personal blog mainly focused on JavaScript and Web Development.',
+      'Sean Groff - Web Developer creating awesome content for JavaScript and React',
     siteUrl: 'https://www.seangroff.com',
   },
   pathPrefix: '/gatsby-starter-blog',
