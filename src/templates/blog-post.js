@@ -19,16 +19,15 @@ class BlogPostTemplate extends PureComponent {
   render() {
     const { data, location, pageContext } = this.props
     const post = data.markdownRemark
-    const siteTitle = data.site.siteMetadata.title
     const siteDescription = post.excerpt
     const { previous, next } = pageContext
 
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location} title="Sean Groff">
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
+          title={`${post.frontmatter.title} by Sean Groff @_SeanGroff`}
         />
         <h1>{post.frontmatter.title}</h1>
         <div style={{ display: 'flex', alignItems: 'center' }}>
