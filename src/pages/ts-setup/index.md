@@ -102,7 +102,7 @@ All new files containing JSX should use the **.tsx** extension and the **.ts** e
 
 First, let's install **TSLint** and some **TSLint** extensions I personally prefer for React Native development.
 
-`$ yarn add --dev tslint tslint-config-prettier tsling-config-standard tslint-react`
+`$ yarn add --dev tslint tslint-config-prettier tslint-config-standard tslint-react`
 
 - added **tslint-config-prettier** so **tslint** and **prettier** won't fight over code formatting rules.
 
