@@ -108,7 +108,7 @@ First, let's install **TSLint** and some **TSLint** extensions I personally pref
 
 You should now see a **tslint.json** file in your project.
 
-Open the **.tslint.json** file and configure it like so:
+Open the **tslint.json** file and configure it like so:
 
 ```json
 {
@@ -141,7 +141,7 @@ From the root of your project open the **package.json** file and add the followi
 "scripts": {
   "start": "node node_modules/react-native/local-cli/cli.js start",
   "test": "jest",
-  "lint": "tslint 'src/**/*.{ts,tsx}`"
+  "lint": "tslint 'src/**/*.{ts,tsx}'"
 }
 ```
 
