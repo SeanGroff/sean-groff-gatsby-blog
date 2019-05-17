@@ -146,4 +146,64 @@ In a more real world example, you would likely define initial state inline if th
 
 ### Reducer
 
-The first argument to `useReducer` is a reducer function.
+The first argument to `useReducer` is a reducer function. The blueprint for the `useReducer` reducer function is:
+
+```javascript
+function reducer(prevState, action) {
+  // insert logic that results in a new state
+
+  return newState
+}
+```
+
+Reducer accepts the previous state for its first argument and the action for its second argument. The body of the reducer will contain whatever logic needed to create new state and return it. Remember, a reducer function accepts 2 values and returns 1 value.
+
+Something that may not be obvious at first is the action can be anything...including a function!
+
+### Return value of useReducer
+
+The `useReducer` hook returns an `Array` of two items. The first item is always your `state`. The second item is always a `dispatch` function.
+
+The `state` returned is always the return value from the `reducer` function.
+
+The `dispatch` function is a void type function (a function with no return value) and the blueprint looks like this:
+
+```javascript
+function dispatch(action) {
+  // void
+}
+```
+
+An important takeaway here is the argument (action) passed into `dispatch` is the second argument passed passed into the `reducer` function.
+
+Example 1:
+
+```javascript
+dispatch({ type: 'SUCCESS' })
+
+function reducer(prevState, action) {
+  console.log(action) // {type: 'SUCCESS'}
+}
+```
+
+Example 2:
+
+```javascript
+dispatch(7)
+
+function reducer(prevState, action) {
+  console.log(action) // 7
+}
+```
+
+Example 3:
+
+Remember I said an action could be anything including a function?
+
+```javascript
+dispatch(a => a + b)
+
+function reducer(prevState, action) {
+  console.log(action) // function(a) { return a + b }
+}
+```
