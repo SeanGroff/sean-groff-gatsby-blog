@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "caleboleary",
+      "name": "Caleb OLeary",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12816579?v=4",
+      "profile": "http://caleboleary.com",
+      "contributions": [
+        "blog"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "sean-groff-gatsby-blog",
+  "projectOwner": "SeanGroff",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}

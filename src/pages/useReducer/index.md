@@ -1,13 +1,13 @@
 ---
-title: 'TEMP TITLE - useReducer Blog Post'
-date: '2019-05-15'
+title: 'The Approachable Guide to useReducer'
+date: '2019-05-20'
 categories: react
 tags: [react, hooks, reducer, useReducer]
 ---
 
 ### Introduction
 
-look a cool intro paragraph
+The `useReducer` hook provides a flexible solution to complex state. The `useState` hook we all know and love is actually built on top of `useReducer`. If you don't understand how a reducer function works you'll likely always reach for `useState`. This isn't the worst thing in the world, but I hope after reading this article you'll understand exactly how to implement `useReducer` and have a decent idea when to use `useReducer`.
 
 ### What is a Reducer?
 
@@ -95,7 +95,8 @@ It's likely your initial reaction is to throw useReducer in the trash and go bac
 1. For each state entity I must declare a setter method.
 2. There is some bug prone cognitive overhead to getting this solution working right
 3. If you are familiar with the `useState` and `useReducer` API the `useState` solution is slightly less declarative in this example.
-4. I don't even want to include this but someone will mention `useReducer` is more performant than `useState`. I'm not sure
+4. All the logic lives inside the Custom hook.
+5. Difficult to test compared to a reducer function.
 
 Now lets focus on the `useReducer` example and elaborate on the numbered list above.
 
@@ -107,7 +108,10 @@ Now lets focus on the `useReducer` example and elaborate on the numbered list ab
 ```
 
 3. You're probably reading this article to learn useReducer so come back later 😎
-4. Technically, `useReducer` is "more performant".
+4. The logic is isolated to the reducer function. The more logic, the stronger the use case for useReducer as it will be easier for other developers to comprehend.
+5. It will always be simpler to test a reducer function (plain JS) than a React Hook.
+
+Outside of this fetch example, it is common to pass a setter function. There are a couple nice things about passing dispatch vs a setState method. The docs have a great explanation [here](https://reactjs.org/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down).
 
 Now that you have a decent opinion of when to use `useReducer` instead of `useState` lets learn the `useReducer` API 🚀.
 
@@ -119,7 +123,7 @@ With that out of the way, the `useReducer` hook accepts three arguments. I'm onl
 
 ### Initial State
 
-To keep you on your toes i'm going to begin with the second argument to `useReducer` only because it's simple to Grok and provides some mental context to the reducer function which is the first argument to `useReducer`. If you're familiar with Redux you can skip ahead.
+To keep you on your toes I'm going to begin with the second argument to `useReducer` only because it's simple to Grok and provides some mental context to the reducer function which is the first argument to `useReducer`. If you're familiar with Redux you can skip ahead.
 
 Typically, `initialState` is a JavaScript Object. If you read the previous paragraph on when to use `useReducer vs useState` than `initialState` will always be an Object 😇. It's an important takeaway to know the initial state can be ANY value. This is why you'll notice in the docs they introduce `initialState` as `initialArg`.
 
@@ -137,7 +141,7 @@ Two things to note here, the first being the obvious. We declared the initial st
 
 ```javascript
 const initialState = 0
-const [state, dispatch] = React.useReducer(exampleReducer, 0)
+const [state, dispatch] = React.useReducer(exampleReducer, initialState)
 ```
 
 In a more real world example, you would likely define initial state inline if the initial state is a simple primitive value.
@@ -215,3 +219,9 @@ Speaking of flexibility, `useReducer` returns an Array of two items. Thanks to J
 ```javascript
 const [name, setName] = React.useReducer(nameReducer, 'Sean')
 ```
+
+### Conclusion
+
+The `useReducer` hook is categorized as an advanced hook in the React docs. When compared to `useState` I'd agree. However, `useEffect` is a basic hook but is far more advanced to learn than `useReducer`. My worry is this categorization prevents some from exploring `useReducer` when `useState` works well enough. Hopefully reading this article shows how approachable and flexible `useReducer` is 😎.
+
+P.S. When the React docs say Basic/Advanced I believe Core/Specialized may be more accurate 🤷‍♂️.
