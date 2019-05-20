@@ -31,9 +31,9 @@ The first question I had when I first read the React docs was "When should I use
 
 ```javascript
 function useFetch(url) {
-  const [data, setData] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [data, setData] = React.useState(null)
+  const [isLoading, setIsLoading] = React.useState(true)
+  const [errorMessage, setErrorMessage] = React.useState('')
 
   const fetchData = async () => {
     try {
@@ -47,7 +47,7 @@ function useFetch(url) {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchData(url)
   }, [])
 
@@ -82,34 +82,32 @@ function useFetch(url) {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchData(url)
   }, [])
 
-  const { data, isLoading, errorMessage } = state
-
-  return { data, isLoading, errorMessage }
+  return state
 }
 ```
 
-Your most likely initial reaction is to throw useReducer in the trash and go back to using useState based on the lines of code 🤣. At the end of the day this really comes down to developer preference anyways so you do you. Lets focus on the `useState` example and I'll point out a few things.
+It's likely your initial reaction is to throw useReducer in the trash and go back to using useState based on the lines of code 🤣. At the end of the day this really comes down to developer preference anyways so you do you. It's way to early for best practices to really be established. Lets focus on the `useState` example and I'll point out a few things.
 
 1. For each state entity I must declare a setter method.
 2. There is some bug prone cognitive overhead to getting this solution working right
 3. If you are familiar with the `useState` and `useReducer` API the `useState` solution is slightly less declarative in this example.
-4. I don't even want to include this but someone will mention `useReducer` is more performant than `useState`.
+4. I don't even want to include this but someone will mention `useReducer` is more performant than `useState`. I'm not sure
 
 Now lets focus on the `useReducer` example and elaborate on the numbered list above.
 
 1. This one is simple, `useReducer` provides a single `dispatch` function I can reuse whenever I want to make a state change.
-2. The cognitive overhead is reduced (no pun intended) to each switch case and the rationality of each state change lives on a single line of code, the object. If the fetch request was successful, I can reasonably set the three state values in one line with minimal cognitive overhead and get the solution quickly working correctly.
+2. The cognitive overhead is reduced (no pun intended) to each switch case and the rationality of each state change lives on a single line of code, the object. If the fetch request was successful, I can reasonably set the three state values in one line with minimal cognitive overhead and quickly get the solution working.
 
 ```javascript
 { data: action.data, isLoading: false, errorMessage: ''}
 ```
 
 3. You're probably reading this article to learn useReducer so come back later 😎
-4. Technically, `useReducer` is "more performant"
+4. Technically, `useReducer` is "more performant".
 
 Now that you have a decent opinion of when to use `useReducer` instead of `useState` lets learn the `useReducer` API 🚀.
 
@@ -130,7 +128,7 @@ You can define the initialState inline as the second argument to useReducer but 
 **Defined Inline would look something like this:**
 
 ```javascript
-const [state, dispatch] = useReducer(exampleReducer, 0)
+const [state, dispatch] = React.useReducer(exampleReducer, 0)
 ```
 
 Two things to note here, the first being the obvious. We declared the initial state inline as the second argument to `useReducer`. Next, remember how I said the initial state can be ANY value? In this example, the initial state is `0`.
@@ -139,7 +137,7 @@ Two things to note here, the first being the obvious. We declared the initial st
 
 ```javascript
 const initialState = 0
-const [state, dispatch] = useReducer(exampleReducer, 0)
+const [state, dispatch] = React.useReducer(exampleReducer, 0)
 ```
 
 In a more real world example, you would likely define initial state inline if the initial state is a simple primitive value.
@@ -206,4 +204,14 @@ dispatch(a => a + b)
 function reducer(prevState, action) {
   console.log(action) // function(a) { return a + b }
 }
+```
+
+Hopefully you're starting to see just how flexible `useReducer` can be!
+
+Speaking of flexibility, `useReducer` returns an Array of two items. Thanks to JavaScript array destructuring you can name the two items whatever makes sense.
+
+☢️Contrived Example Warning ☢️
+
+```javascript
+const [name, setName] = React.useReducer(nameReducer, 'Sean')
 ```
