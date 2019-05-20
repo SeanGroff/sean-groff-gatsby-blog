@@ -7,7 +7,7 @@ tags: [react, hooks, reducer, useReducer]
 
 ### Introduction
 
-The `useReducer` hook provides a flexible solution to complex state. The `useState` hook we all know and love actually built on top of `useReducer`. If you don't understand how a reducer function works you'll likely always reach for `useState`. This isn't the worst thing in the world, but I hope after reading this article you'll understand exactly how to implement `useReducer` and have a decent idea when to use `useReducer`.
+The `useReducer` hook provides a flexible solution to complex state. The `useState` hook we all know and love is actually built on top of `useReducer`. If you don't understand how a reducer function works you'll likely always reach for `useState`. This isn't the worst thing in the world, but I hope after reading this article you'll understand exactly how to implement `useReducer` and have a decent idea when to use `useReducer`.
 
 ### What is a Reducer?
 
@@ -123,7 +123,7 @@ With that out of the way, the `useReducer` hook accepts three arguments. I'm onl
 
 ### Initial State
 
-To keep you on your toes i'm going to begin with the second argument to `useReducer` only because it's simple to Grok and provides some mental context to the reducer function which is the first argument to `useReducer`. If you're familiar with Redux you can skip ahead.
+To keep you on your toes I'm going to begin with the second argument to `useReducer` only because it's simple to Grok and provides some mental context to the reducer function which is the first argument to `useReducer`. If you're familiar with Redux you can skip ahead.
 
 Typically, `initialState` is a JavaScript Object. If you read the previous paragraph on when to use `useReducer vs useState` than `initialState` will always be an Object 😇. It's an important takeaway to know the initial state can be ANY value. This is why you'll notice in the docs they introduce `initialState` as `initialArg`.
 
@@ -141,7 +141,7 @@ Two things to note here, the first being the obvious. We declared the initial st
 
 ```javascript
 const initialState = 0
-const [state, dispatch] = useReducer(exampleReducer, 0)
+const [state, dispatch] = useReducer(exampleReducer, initialState)
 ```
 
 In a more real world example, you would likely define initial state inline if the initial state is a simple primitive value.
@@ -212,6 +212,6 @@ function reducer(prevState, action) {
 
 ### Conclusion
 
-The `useReducer` hook is categorized as an advanced hook in the React docs. When compared to `useState` i'd agree. However, `useEffect` is a basic hook but is far more advanced to learn than `useReducer`. My worry is this categorization prevents some from exploring `useReducer` when `useState` works well enough. Hopefully reading this article shows how approachable and flexible `useReducer` is 😎.
+The `useReducer` hook is categorized as an advanced hook in the React docs. When compared to `useState` I'd agree. However, `useEffect` is a basic hook but is far more advanced to learn than `useReducer`. My worry is this categorization prevents some from exploring `useReducer` when `useState` works well enough. Hopefully reading this article shows how approachable and flexible `useReducer` is 😎.
 
 P.S. When the React docs say Basic/Advanced I believe Core/Specialized may be more accurate 🤷‍♂️.
