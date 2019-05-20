@@ -86,9 +86,7 @@ function useFetch(url) {
     fetchData(url)
   }, [])
 
-  const { data, isLoading, errorMessage } = state
-
-  return { data, isLoading, errorMessage }
+  return state
 }
 ```
 
