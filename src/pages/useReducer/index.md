@@ -111,6 +111,8 @@ Now lets focus on the `useReducer` example and elaborate on the numbered list ab
 4. The logic is isolated to the reducer function. The more logic, the stronger the use case for useReducer as it will be easier for other devs to comprehend.
 5. It will always be simpler to test a reducer function (plain JS) than a React Hook.
 
+Outside of this fetch example, it is common to pass a setter function. There are a couple nice things about passing dispatch vs a setState method. The docs have a great explanation [here](https://reactjs.org/docs/hooks-faq.html#how-to-avoid-passing-callbacks-down).
+
 Now that you have a decent opinion of when to use `useReducer` instead of `useState` lets learn the `useReducer` API 🚀.
 
 ### Learning the API
