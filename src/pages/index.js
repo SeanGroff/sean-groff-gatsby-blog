@@ -22,12 +22,16 @@ class BlogIndex extends PureComponent {
     const siteDescription = data.site.siteMetadata.description
     const posts = data.allMarkdownRemark.edges
 
+    // @TODO Dark Mode
+    // body background-color: black
+    // body color: offWhite
     return (
       <ThemeProvider theme={theme}>
         <Global
           styles={css`
             body {
-              background: ${theme.colors.white};
+              background: ${theme.colors.offWhite};
+              color: ${theme.colors.black};
             }
             a {
               color: ${theme.colors.primary};
