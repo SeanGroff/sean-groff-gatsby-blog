@@ -3,7 +3,6 @@
  */
 code[class*='language-'],
 pre[class*='language-'] {
-  color: white;
   background: none;
   font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
   text-align: left;
@@ -31,6 +30,7 @@ pre[class*='language-'],
 /* Code blocks */
 pre[class*='language-'] {
   border-radius: 10px;
+  color: #ffffff;
   overflow: auto;
   padding: 1em;
 }
@@ -62,7 +62,6 @@ pre[class*='language-'] ::selection {
 :not(pre) > code[class*='language-'] {
   border-radius: 0.3em;
   background: rgba(255, 229, 100, 0.2);
-  color: #1a1a1a;
   padding: 0.15em 0.2em 0.05em;
   white-space: normal;
 }

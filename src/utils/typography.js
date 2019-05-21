@@ -5,6 +5,10 @@ Wordpress2016.overrideThemeStyles = () => ({
   'a.gatsby-resp-image-link': {
     boxShadow: 'none',
   },
+  blockquote: {
+    color: 'inherit',
+    borderLeftColor: 'inherit',
+  },
 })
 
 delete Wordpress2016.googleFonts
