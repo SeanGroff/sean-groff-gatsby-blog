@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
 
 const StyledFooter = styled.footer`
   display: flex;

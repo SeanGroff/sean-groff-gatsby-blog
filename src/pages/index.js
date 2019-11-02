@@ -40,7 +40,9 @@ function BlogIndex({ data, location }) {
                 {Array.from(
                   Array(Math.floor(node.timeToRead / 2)),
                   (_, index) => (
-                    <span key={index}>🤓</span>
+                    <span key={index} role="img" aria-label="nerdy emoji">
+                      🤓
+                    </span>
                   )
                 )}
               </span>
