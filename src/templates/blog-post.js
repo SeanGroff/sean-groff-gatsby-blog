@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { MDXRenderer } from 'gatsby-mdx'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
@@ -17,7 +18,7 @@ function BlogPostTemplate({ data, location, pageContext }) {
     }
   })
   const isDarkMode = React.useContext(DarkModeStateContext)
-  const post = data.markdownRemark
+  const post = data.mdx
   const siteDescription = post.excerpt
   const { previous, next } = pageContext
 
@@ -39,11 +40,12 @@ function BlogPostTemplate({ data, location, pageContext }) {
           backgroundColor: `${theme.colors[isDarkMode ? 'black' : 'offWhite']}`,
           padding: '0 32px',
         }}
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      >
+        {/* <MDXRenderer>{post.code.body}</MDXRenderer> */}
+      </div>
+      >
       <hr style={{ marginBottom: rhythm(1) }} />
       <Bio />
-
       <ul
         style={{
           display: 'flex',
@@ -96,10 +98,13 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      code {
+        body
+        scope
+      }
       id
       excerpt
-      html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

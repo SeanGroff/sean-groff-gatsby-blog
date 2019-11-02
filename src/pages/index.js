@@ -17,7 +17,7 @@ function BlogIndex({ data, location }) {
 
   const siteTitle = data.site.siteMetadata.title
   const siteDescription = data.site.siteMetadata.description
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allMdx.edges
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
