@@ -145,6 +145,8 @@ This year was ruled by our upcoming August wedding. It was my main focus for the
 
 The baseball season (I'm still coaching little league baseball) went long due to a bunch of rainouts. The final game was in mid-July where we finished with a 3rd place trophy. It was quite an accomplishment for the team. Without much time left before the wedding, it was a mad dash to get everything done and finalized. Including the honeymoon planning.
 
+A week before the wedding I was promoted to Lead Senior Engineer III at work! I would now be in charge of a few offshore teams as well as the lead for all things front end.
+
 Our wedding day turned out perfect. Cloudy with a high of 72 degrees. If you’re familiar with August in Missouri you know how rare of an occurrence this great weather is. The wedding was amazing. Best of all, there was no more wedding planning. I could shift my focus to our honeymoon in Aruba.
 
 After we got married, Jessica quit her job to be a full-time stay at home mom. This has been great for our kids and we are blessed to be in a position to do this. In September we spent 9 nights in Aruba. If you’ve never been to Aruba I'd recommend it over anywhere else in the Caribbean. The country is run on tourism so everyone there is extremely friendly and helpful.
