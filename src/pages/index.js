@@ -15,10 +15,24 @@ function BlogIndex({ data, location }) {
     }
   }, [])
 
+  const getEmojisCount = React.useCallback(timeToRead => {
+    switch (true) {
+      case timeToRead >= 20:
+        return 5
+      case timeToRead >= 15:
+        return 4
+      case timeToRead >= 10:
+        return 3
+      case timeToRead >= 5:
+        return 2
+      default:
+        return 1
+    }
+  }, [])
+
   const siteTitle = data.site.siteMetadata.title
   const siteDescription = data.site.siteMetadata.description
   const posts = data.allMarkdownRemark.edges
-
   return (
     <ThemeProvider theme={theme}>
       <Layout location={location} title="Sean Groff">
@@ -38,7 +52,7 @@ function BlogIndex({ data, location }) {
               </small>
               <span>
                 {Array.from(
-                  Array(Math.floor(node.timeToRead / 2)),
+                  Array(getEmojisCount(node.timeToRead)),
                   (_, index) => (
                     <span key={index} role="img" aria-label="nerdy emoji">
                       🤓
