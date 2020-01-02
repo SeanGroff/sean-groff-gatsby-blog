@@ -143,6 +143,8 @@ I was sad to leave my first developer job. The job that gave me my chance.
 
 This year was ruled by our upcoming August wedding. It was my main focus for the year. In February, my company sent my fiance and me to San Francisco for a weekend getaway. We had never been there before, we touristed hard! What an amazing city. The spring flew by and it was summer before I knew it. By the time summer came around, I was worn out from the stress of wedding planning and I was burnt out at my job. I needed a break. Jessica and I decided on a quick 2 day getaway to Vegas. It gave me the break I needed from work and the upcoming wedding.
 
+I met some friends from work who started a Discord group to get together every Thursday night and play Starcraft 2. We have a great time catching up, drinking, and playing SC2. I look forward to Thursday every week!
+
 The baseball season (I'm still coaching little league baseball) went long due to a bunch of rainouts. The final game was in mid-July where we finished with a 3rd place trophy. It was quite an accomplishment for the team. Without much time left before the wedding, it was a mad dash to get everything done and finalized. Including the honeymoon planning.
 
 A week before the wedding I was promoted to Lead Senior Engineer III at work! I would now be in charge of a few offshore teams as well as the lead for all things front end.
