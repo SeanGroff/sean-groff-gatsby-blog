@@ -12,13 +12,19 @@ import '../styles/toggle.css'
 function DarkModeButton() {
   const isDarkMode = React.useContext(DarkModeStateContext)
   const setDarkMode = React.useContext(SetDarkModeContext)
+  const handleChange = event => {
+    const value = event.target.checked
+    setDarkMode(value)
+    return value
+  }
+
   return (
     <span>
       <Toggle
         aria-label="Dark Mode Toggle"
         defaultChecked={isDarkMode}
         icons={{ checked: <IconCool />, unchecked: <IconGhost /> }}
-        onChange={setDarkMode}
+        onChange={handleChange}
       />
     </span>
   )
