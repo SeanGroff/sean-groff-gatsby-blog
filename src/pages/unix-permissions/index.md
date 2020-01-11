@@ -1,5 +1,5 @@
 ---
-title: "Unix Permissions Demystified"
+title: 'Unix Permissions Demystified'
 date: '2019-11-04'
 categories: linux
 tags: [linux, unix, terminal, permissions, chmod]
@@ -8,7 +8,6 @@ tags: [linux, unix, terminal, permissions, chmod]
 ### Permission Denied
 
 Permission Denied! If you've used any Unix-Like Operating System you've no doubt seen these two words in the terminal. A quick Google search says to use `chmod /path/to/file 400`. You have no idea what `400` means but you still get the `Permission Denied` error message. You see some posts that say `chmod /path/to/file 777`. You have no idea what `777` means but you no longer receive the `Permission Denied` error! You see some comments mentioning this is a big security risk. You shrug your shoulders and carry on with your day only to repeat this Google search days, weeks, or months later...
-
 
 ### Viewing Permissions
 
@@ -32,9 +31,9 @@ Lets focus only on the left column that has the random looking letters. To decip
 
 Group 1 delineates the file type and consists of the first letter or hyphen.
 
-* **`d`** = directory
-* **`-`** = file
-* **`l`** = symlink
+- **`d`** = directory
+- **`-`** = file
+- **`l`** = symlink
 
 When referring back to the sample output on my computer we now know `.somefile` and `NotTopSecret.txt` are files and `pictures` is a directory.
 
@@ -42,9 +41,9 @@ When referring back to the sample output on my computer we now know `.somefile` 
 
 **Note:** The rest of the groups are in groups of three letters in the following order:
 
-* **`r`** = **R**ead
-* **`w`** = **W**rite
-* **`x`** = E**x**ecute
+- **`r`** = **R**ead
+- **`w`** = **W**rite
+- **`x`** = E**x**ecute
 
 The **`-`** means can NOT.
 
@@ -55,7 +54,6 @@ Owner (user) Rights
 **Group 3**
 
 Group Rights
-
 
 **Group 4**
 
@@ -102,10 +100,10 @@ To change permissions of a file or directory in Linux or any Unix-like OS we use
 
 Read, Write, and Execute each have their own numeric value.
 
-* **`r`** = 4
-* **`w`** = 2
-* **`x`** = 1
-* **`-`** = 0
+- **`r`** = 4
+- **`w`** = 2
+- **`x`** = 1
+- **`-`** = 0
 
 Total is the sum or `r w x`. You'll see what I mean by "Total" soon.
 
