@@ -1,17 +1,10 @@
 import React from 'react'
 
-import {
-  DarkModeStateContext,
-  SetDarkModeContext,
-} from '../context/DarkModeContext'
-
-const toggleDarkModeReducer = (prevState, _) => !prevState
+import { useLocalStorage } from '../hooks'
+import { DarkModeStateContext, SetDarkModeContext } from './DarkModeContext'
 
 function DarkModeProvider({ children }) {
-  const [isDarkMode, setDarkMode] = React.useReducer(
-    toggleDarkModeReducer,
-    false
-  )
+  const [isDarkMode, setDarkMode] = useLocalStorage('isDarkMode', false)
   return (
     <DarkModeStateContext.Provider value={isDarkMode}>
       <SetDarkModeContext.Provider value={setDarkMode}>
