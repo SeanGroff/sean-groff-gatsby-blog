@@ -7,6 +7,7 @@ export function useLocalStorage(key, initialValue) {
       const test = item ? JSON.parse(item) : initialValue
       return test
     } catch (error) {
+      console.error(error)
       return initialValue
     }
   }, [initialValue, key])
