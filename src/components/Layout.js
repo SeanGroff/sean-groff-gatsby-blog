@@ -9,11 +9,16 @@ import { rhythm, scale } from '../utils/typography'
 import theme from '../utils/theme'
 
 function Layout({ children, location, title }) {
+  console.log('-----')
+  console.log('Layout')
   const isDarkMode = React.useContext(DarkModeStateContext)
   const bgColor = isDarkMode ? 'black' : 'offWhite'
   const textColor = isDarkMode ? 'offWhite' : 'black'
   const rootPath = `${__PATH_PREFIX__}/`
   let header
+  console.log({ isDarkMode })
+  console.log({ bgColor })
+  console.log('-----')
 
   if (location.pathname === rootPath) {
     header = (
