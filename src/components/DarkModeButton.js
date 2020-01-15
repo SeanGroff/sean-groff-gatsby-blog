@@ -11,9 +11,14 @@ import '../styles/toggle.css'
 
 function DarkModeButton() {
   const isDarkMode = React.useContext(DarkModeStateContext)
+  console.log({ isDarkMode })
+  console.log(typeof isDarkMode)
+
   const setDarkMode = React.useContext(SetDarkModeContext)
   const handleChange = event => {
+    console.log('handleChange')
     const value = event.target.checked
+    console.log('value ', value)
     setDarkMode(value)
     return value
   }

@@ -21,6 +21,7 @@ export function useLocalStorage(key, initialValue) {
   const setValue = React.useCallback(
     value => {
       try {
+        console.log('value: ', value)
         setStoredValue(value)
 
         // Save to local storage
