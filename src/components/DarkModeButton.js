@@ -3,18 +3,9 @@ import Toggle from 'react-toggle'
 
 import IconGhost from './IconGhost'
 import IconCool from './IconCool'
-import {
-  DarkModeStateContext,
-  SetDarkModeContext,
-} from '../context/DarkModeContext'
 import '../styles/toggle.css'
 
-function DarkModeButton() {
-  const isDarkMode = React.useContext(DarkModeStateContext)
-  console.log({ isDarkMode })
-  console.log(typeof isDarkMode)
-
-  const setDarkMode = React.useContext(SetDarkModeContext)
+function DarkModeButton({ isDarkMode, setDarkMode }) {
   const handleChange = event => {
     console.log('handleChange')
     const value = event.target.checked
