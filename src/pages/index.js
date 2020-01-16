@@ -6,12 +6,15 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm } from '../utils/typography'
 
-function BlogIndex({ data, location }) {
+function BlogIndex({ data, location, ...rest }) {
   React.useLayoutEffect(() => {
     if (twttr && twttr.widgets) {
       twttr.widgets.load()
     }
   }, [])
+
+  console.log(data)
+  console.log(rest)
 
   const getEmojisCount = React.useCallback(timeToRead => {
     switch (true) {
