@@ -5,8 +5,7 @@ export function useLocalStorage(key, initialValue) {
     try {
       const item = window.localStorage.getItem(key)
       const test = item ? JSON.parse(item) : initialValue
-      console.log('item: ', item)
-      console.log('💩 ', test)
+      console.log('local storage item: ', item)
       return test
     } catch (error) {
       console.error(error)
@@ -21,7 +20,6 @@ export function useLocalStorage(key, initialValue) {
   const setValue = React.useCallback(
     value => {
       try {
-        console.log('value: ', value)
         setStoredValue(value)
 
         // Save to local storage
