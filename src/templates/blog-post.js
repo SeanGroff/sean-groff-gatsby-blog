@@ -17,7 +17,11 @@ function BlogPostTemplate({ data, location, pageContext }) {
     }
   })
   const post = data.markdownRemark
-  const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+  const featuredImage = post.frontmatter.featuredImage
+  const featuredImgFluid =
+    featuredImage &&
+    featuredImage.childImageSharp &&
+    featuredImage.childImageSharp.fluid
   const siteDescription = post.excerpt
   const { previous, next } = pageContext
 
@@ -29,7 +33,7 @@ function BlogPostTemplate({ data, location, pageContext }) {
         title={`${post.frontmatter.title} by Sean Groff @_SeanGroff`}
       />
       <h1>{post.frontmatter.title}</h1>
-      <Img fluid={featuredImgFluid} />
+      {featuredImgFluid && <Img fluid={featuredImgFluid} />}
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <p style={{ ...scale(-1 / 5), margin: 0 }}>{post.frontmatter.date}</p>
         <TwitterShare />
