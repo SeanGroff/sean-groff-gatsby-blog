@@ -35,8 +35,6 @@ function BlogIndex({ data, location, ...rest }) {
   const siteDescription = data.site.siteMetadata.description
   const posts = data.allMarkdownRemark.edges
 
-  debugger
-
   return (
     <Layout location={location} title="Sean Groff">
       <SEO description={siteDescription} title={siteTitle} />

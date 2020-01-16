@@ -13,6 +13,7 @@ import theme from '../utils/theme'
 
 function Layout({ children, location, title }) {
   console.log('-----')
+  console.log(theme.colors)
   console.log('Layout')
   const isDarkMode = React.useContext(DarkModeStateContext)
   const setDarkMode = React.useContext(SetDarkModeContext)
