@@ -2,6 +2,7 @@
 title: 'My Decade Story - First as a Developer'
 date: '2020-01-01'
 categories: personal
+featuredImage: ../../assets/mountain.jpg
 tags:
   [
     sean,
