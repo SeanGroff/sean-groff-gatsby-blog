@@ -20,7 +20,6 @@ function DarkModeButton() {
     const value = event.target.checked
     console.log('value ', value)
     setDarkMode(value)
-    return value
   }
 
   return (
