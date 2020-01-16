@@ -13,9 +13,6 @@ function BlogIndex({ data, location, ...rest }) {
     }
   }, [])
 
-  console.log(data)
-  console.log(rest)
-
   const getEmojisCount = React.useCallback(timeToRead => {
     switch (true) {
       case timeToRead >= 20:
