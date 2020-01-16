@@ -3,14 +3,10 @@ import { Link } from 'gatsby'
 
 import GlobalStyle from './GlobalStyle'
 import Footer from './Footer'
-import { DarkModeStateContext } from '../context/DarkModeContext'
 import { rhythm, scale } from '../utils/typography'
 import theme from '../utils/theme'
 
 function Layout({ children, location, title }) {
-  const isDarkMode = React.useContext(DarkModeStateContext)
-  const bgColor = isDarkMode ? 'black' : 'offWhite'
-  const textColor = isDarkMode ? 'offWhite' : 'black'
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
@@ -62,8 +58,8 @@ function Layout({ children, location, title }) {
       <GlobalStyle theme={theme} />
       <div
         css={{
-          backgroundColor: `${theme.colors[bgColor]}`,
-          color: `${theme.colors[textColor]}`,
+          backgroundColor: `${theme.colors.black}`,
+          color: `${theme.colors.offWhite}`,
           marginLeft: 'auto',
           marginRight: 'auto',
           maxWidth: rhythm(24),
