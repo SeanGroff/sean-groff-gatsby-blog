@@ -5,14 +5,9 @@ import { Global, css } from '@emotion/core'
 import { DarkModeStateContext } from '../context/DarkModeContext'
 
 function GlobalStyle(props) {
-  console.log('Global Style')
-  console.log(props)
   const isDarkMode = React.useContext(DarkModeStateContext)
   const bgColor = isDarkMode ? 'black' : 'offWhite'
   const textColor = isDarkMode ? 'offWhite' : 'black'
-  console.log({ isDarkMode })
-  console.log(bgColor)
-  console.log('End of Global Style')
   return (
     <Global
       styles={css`

@@ -7,9 +7,7 @@ import '../styles/toggle.css'
 
 function DarkModeButton({ isDarkMode, setDarkMode }) {
   const handleChange = event => {
-    console.log('handleChange')
     const value = event.target.checked
-    console.log('value ', value)
     setDarkMode(value)
   }
 
