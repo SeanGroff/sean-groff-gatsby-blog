@@ -16,6 +16,7 @@ function BlogPostTemplate({ data, location, pageContext }) {
       twttr.widgets.load()
     }
   })
+
   const post = data.markdownRemark
   const featuredImage = post.frontmatter.featuredImage
   const featuredImgFluid =
@@ -34,7 +35,14 @@ function BlogPostTemplate({ data, location, pageContext }) {
       />
       <h1>{post.frontmatter.title}</h1>
       {featuredImgFluid && <Img fluid={featuredImgFluid} />}
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div
+        css={{
+          display: 'flex',
+          justifyContent: `${featuredImgFluid ? 'flex-end' : null}`,
+          paddingTop: `${featuredImgFluid ? '8px' : null}`,
+          alignItems: 'center',
+        }}
+      >
         <p style={{ ...scale(-1 / 5), margin: 0 }}>{post.frontmatter.date}</p>
         <TwitterShare />
       </div>
