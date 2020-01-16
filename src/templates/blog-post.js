@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import Img from 'gatsby-image'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
@@ -7,7 +8,6 @@ import Layout from '../components/Layout'
 import TwitterShare from '../components/TwitterShare'
 import { rhythm, scale } from '../utils/typography'
 import theme from '../utils/theme'
-import { DarkModeStateContext } from '../context/DarkModeContext'
 import '../styles/theme.css'
 
 function BlogPostTemplate({ data, location, pageContext }) {
@@ -16,8 +16,8 @@ function BlogPostTemplate({ data, location, pageContext }) {
       twttr.widgets.load()
     }
   })
-  const isDarkMode = React.useContext(DarkModeStateContext)
   const post = data.markdownRemark
+  const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   const siteDescription = post.excerpt
   const { previous, next } = pageContext
 
@@ -29,14 +29,15 @@ function BlogPostTemplate({ data, location, pageContext }) {
         title={`${post.frontmatter.title} by Sean Groff @_SeanGroff`}
       />
       <h1>{post.frontmatter.title}</h1>
+      <Img fluid={featuredImgFluid} />
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <p style={{ ...scale(-1 / 5), margin: 0 }}>{post.frontmatter.date}</p>
         <TwitterShare />
       </div>
       <div
         style={{
-          color: `${theme.colors[isDarkMode ? 'offWhite' : 'black']}`,
-          backgroundColor: `${theme.colors[isDarkMode ? 'black' : 'offWhite']}`,
+          color: `${theme.colors.offWhite}`,
+          backgroundColor: `${theme.colors.black}`,
           padding: '0 32px',
         }}
         dangerouslySetInnerHTML={{ __html: post.html }}
@@ -103,6 +104,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
