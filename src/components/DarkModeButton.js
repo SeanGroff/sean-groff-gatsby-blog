@@ -12,7 +12,7 @@ function DarkModeButton() {
   return (
     <span>
       <Toggle
-        defaultChecked={darkMode.value}
+        defaultChecked={darkMode.value || true}
         aria-label="Dark Mode Toggle"
         icons={{ checked: <IconCool />, unchecked: <IconGhost /> }}
         onChange={darkMode.toggle}
