@@ -25,12 +25,13 @@ const useInitializeDarkMode = (enableDarkMode, disableDarkMode) => {
 
 function DarkModeButton() {
   const darkMode = useDarkMode()
+  console.log({ darkMode })
   useInitializeDarkMode(darkMode.enable, darkMode.disable)
 
   return (
     <span>
       <Toggle
-        defaultChecked={darkMode.value}
+        checked={darkMode.value}
         aria-label="Dark Mode Toggle"
         icons={{ checked: <IconCool />, unchecked: <IconGhost /> }}
         onChange={darkMode.toggle}
