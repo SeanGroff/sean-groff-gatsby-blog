@@ -1,5 +1,5 @@
 import React from 'react'
-import Switch from 'react-switch'
+import Toggle from 'react-toggle'
 
 import useDarkMode from 'use-dark-mode'
 import IconGhost from './IconGhost'
@@ -28,14 +28,14 @@ function DarkModeButton() {
   useInitializeDarkMode(darkMode.enable, darkMode.disable)
 
   return (
-    <label>
-      <Switch
+    <span>
+      <Toggle
         checked={darkMode.value}
-        checkedIcon={<IconCool />}
-        uncheckedIcon={<IconGhost />}
+        aria-label="Dark Mode Toggle"
+        icons={{ checked: <IconCool />, unchecked: <IconGhost /> }}
         onChange={darkMode.toggle}
       />
-    </label>
+    </span>
   )
 }
 
