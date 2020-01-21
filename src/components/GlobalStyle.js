@@ -2,18 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Global, css } from '@emotion/core'
 
-import { DarkModeStateContext } from '../context/DarkModeContext'
-
 function GlobalStyle(props) {
-  const isDarkMode = React.useContext(DarkModeStateContext)
-  const bgColor = isDarkMode ? 'black' : 'offWhite'
-  const textColor = isDarkMode ? 'offWhite' : 'black'
   return (
     <Global
       styles={css`
-        body {
-          background: ${props.theme.colors[bgColor]};
-          color: ${props.theme.colors[textColor]};
+        .dark-mode {
+          background-color: #393939;
+          color: #f8f7f4;
+          transition: all 0.3s ease-in;
+        }
+        .light-mode {
+          background-color: #f8f7f4;
+          color: #393939;
+          transition: all 0.3s ease-in;
         }
         a {
           color: ${props.theme.colors.primary};

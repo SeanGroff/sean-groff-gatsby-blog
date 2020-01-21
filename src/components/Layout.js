@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import GlobalStyle from './GlobalStyle'
+import DarkModeButton from './DarkModeButton'
 import Footer from './Footer'
 import { rhythm, scale } from '../utils/typography'
 import theme from '../utils/theme'
@@ -58,8 +59,6 @@ function Layout({ children, location, title }) {
       <GlobalStyle theme={theme} />
       <div
         css={{
-          backgroundColor: `${theme.colors.black}`,
-          color: `${theme.colors.offWhite}`,
           marginLeft: 'auto',
           marginRight: 'auto',
           maxWidth: rhythm(24),
@@ -74,6 +73,7 @@ function Layout({ children, location, title }) {
           }}
         >
           {header}
+          <DarkModeButton />
         </div>
         {children}
         <Footer />

@@ -75,6 +75,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-serviceworker`,
+    'gatsby-plugin-use-dark-mode',
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',
