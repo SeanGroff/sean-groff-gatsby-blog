@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import { Link, graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -17,7 +18,7 @@ function BlogPostTemplate({ data, location, pageContext }) {
     }
   })
 
-  const post = data.markdownRemark
+  const post = data.mdx
   const featuredImage = post.frontmatter.featuredImage
   const featuredImgFluid =
     featuredImage &&
@@ -46,14 +47,15 @@ function BlogPostTemplate({ data, location, pageContext }) {
         <p style={{ ...scale(-1 / 5), margin: 0 }}>{post.frontmatter.date}</p>
         <TwitterShare />
       </div>
-      <div
+      <MDXRenderer
         style={{
           color: `${theme.colors.offWhite}`,
           backgroundColor: `${theme.colors.black}`,
           padding: '0 32px',
         }}
-        dangerouslySetInnerHTML={{ __html: post.html }}
-      />
+      >
+        {post.body}
+      </MDXRenderer>
       <hr style={{ marginBottom: rhythm(1) }} />
       <Bio />
 
@@ -109,10 +111,10 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
