@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import useDarkMode from 'use-dark-mode'
 
 import GlobalStyle from './GlobalStyle'
 import DarkModeButton from './DarkModeButton'
@@ -7,7 +8,32 @@ import Footer from './Footer'
 import { rhythm, scale } from '../utils/typography'
 import theme from '../utils/theme'
 
+const useToggle = darkModeToggle => {
+  const [isToggleChecked, setIsToggleChecked] = React.useState(null)
+
+  const _initializeToggle = React.useCallback(isDarkMode => {
+    setIsToggleChecked(isDarkMode)
+  }, [])
+
+  React.useLayoutEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isDarkMode = JSON.parse(localStorage.getItem('darkMode'))
+      _initializeToggle(isDarkMode)
+    }
+  }, [_initializeToggle])
+
+  const handleToggle = React.useCallback(() => {
+    setIsToggleChecked(!isToggleChecked)
+    darkModeToggle()
+  }, [darkModeToggle, isToggleChecked])
+
+  return [isToggleChecked, handleToggle]
+}
+
 function Layout({ children, location, title }) {
+  const darkMode = useDarkMode()
+  const [isToggleChecked, setIsToggleChecked] = useToggle(darkMode.toggle)
+
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
@@ -73,7 +99,10 @@ function Layout({ children, location, title }) {
           }}
         >
           {header}
-          <DarkModeButton />
+          <DarkModeButton
+            value={isToggleChecked}
+            onChange={setIsToggleChecked}
+          />
         </div>
         {children}
         <Footer />
