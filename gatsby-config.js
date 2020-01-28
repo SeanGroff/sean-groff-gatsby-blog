@@ -5,7 +5,7 @@ module.exports = {
     author: 'Sean Groff',
     description:
       'Sean Groff - Web Developer creating awesome content for JavaScript and React',
-    siteUrl: 'https://www.seangroff.com',
+    siteUrl: 'https://www.seangroff.dev',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
