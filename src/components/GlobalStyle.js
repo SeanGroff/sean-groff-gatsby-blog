@@ -7,13 +7,13 @@ function GlobalStyle(props) {
     <Global
       styles={css`
         .dark-mode {
-          background-color: #393939;
+          background-color: #131217;
           color: #f8f7f4;
           transition: all 0.3s ease-in;
         }
         .light-mode {
           background-color: #f8f7f4;
-          color: #393939;
+          color: #131217;
           transition: all 0.3s ease-in;
         }
         a {
