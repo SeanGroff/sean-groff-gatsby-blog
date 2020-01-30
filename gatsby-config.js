@@ -5,7 +5,7 @@ module.exports = {
     author: 'Sean Groff',
     description:
       'Sean Groff - Web Developer creating awesome content for JavaScript and React',
-    siteUrl: 'https://www.seangroff.com',
+    siteUrl: 'https://www.seangroff.dev',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -32,9 +32,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -61,7 +62,7 @@ module.exports = {
         trackingId: `UA-131600511-1`,
       },
     },
-    `gatsby-plugin-feed`,
+    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -75,6 +76,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-serviceworker`,
+    'gatsby-plugin-use-dark-mode',
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',

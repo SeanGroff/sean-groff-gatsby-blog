@@ -5,19 +5,14 @@ import IconGhost from './IconGhost'
 import IconCool from './IconCool'
 import '../styles/toggle.css'
 
-function DarkModeButton({ isDarkMode, setDarkMode }) {
-  const handleChange = event => {
-    const value = event.target.checked
-    setDarkMode(value)
-  }
-
+function DarkModeButton({ value, onChange }) {
   return (
     <span>
       <Toggle
+        checked={value}
         aria-label="Dark Mode Toggle"
-        checked={isDarkMode}
         icons={{ checked: <IconCool />, unchecked: <IconGhost /> }}
-        onChange={handleChange}
+        onChange={onChange}
       />
     </span>
   )
