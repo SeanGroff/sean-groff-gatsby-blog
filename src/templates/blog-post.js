@@ -24,16 +24,33 @@ function BlogPostTemplate({ data, location, pageContext }) {
     featuredImage &&
     featuredImage.childImageSharp &&
     featuredImage.childImageSharp.fluid
+  const featuredImgFluidSrc =
+    featuredImage &&
+    featuredImage.childImageSharp &&
+    featuredImage.childImageSharp.fluid &&
+    featuredImage.childImageSharp.fluid.src
   const siteDescription = post.excerpt
+  const seo = data.site.siteMetadata
   const { previous, next } = pageContext
 
   return (
     <Layout location={location} title="Sean Groff">
-      <Helmet
-        htmlAttributes={{ lang: 'en' }}
-        meta={[{ name: 'description', content: siteDescription }]}
-        title={`${post.frontmatter.title} by Sean Groff @_SeanGroff`}
-      />
+      <Helmet htmlAttributes={{ lang: 'en' }}>
+        {/* General tags */}
+        <title>{`${post.frontmatter.title} by Sean Groff @_SeanGroff`}</title>
+        <meta name="description" content={siteDescription} />
+        <meta name="image" content={seo.image} />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content={seo.userTwitter} />
+        <meta
+          name="twitter:title"
+          content={`${post.frontmatter.title} by Sean Groff @_SeanGroff`}
+        />
+        <meta name="twitter:description" content={siteDescription} />
+        <meta name="twitter:image" content={featuredImgFluidSrc} />
+      </Helmet>
       <h1>{post.frontmatter.title}</h1>
       {featuredImgFluid && <Img fluid={featuredImgFluid} />}
       <div
@@ -108,8 +125,20 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
+        canonicalUrl
+        image
         author {
           name
+        }
+        organization {
+          name
+          url
+          logo
+        }
+        social {
+          twitter
+          fbAppID
         }
       }
     }
