@@ -49,7 +49,10 @@ function BlogPostTemplate({ data, location, pageContext }) {
           content={`${post.frontmatter.title} by Sean Groff @_SeanGroff`}
         />
         <meta name="twitter:description" content={siteDescription} />
-        <meta name="twitter:image" content={featuredImgFluidSrc} />
+        <meta
+          name="twitter:image"
+          content={`${seo.canonicalUrl}${featuredImgFluidSrc}`}
+        />
       </Helmet>
       <h1>{post.frontmatter.title}</h1>
       {featuredImgFluid && <Img fluid={featuredImgFluid} />}
