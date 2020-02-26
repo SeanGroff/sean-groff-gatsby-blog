@@ -6,7 +6,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm } from '../utils/typography'
 
-function BlogIndex({ data, location, ...rest }) {
+function BlogIndex({ data, location }) {
   React.useLayoutEffect(() => {
     if (twttr && twttr.widgets) {
       twttr.widgets.load()
@@ -28,13 +28,11 @@ function BlogIndex({ data, location, ...rest }) {
     }
   }, [])
 
-  const siteTitle = data.site.siteMetadata.title
-  const siteDescription = data.site.siteMetadata.description
   const posts = data.allMdx.edges
 
   return (
     <Layout location={location} title="Sean Groff">
-      <SEO description={siteDescription} title={siteTitle} />
+      <SEO />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug

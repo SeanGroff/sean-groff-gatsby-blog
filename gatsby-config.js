@@ -1,11 +1,27 @@
+const config = require('./config/website')
+
 module.exports = {
   siteMetadata: {
-    title:
-      'Sean Groff | Web Developer creating awesome content for JavaScript and React',
-    author: 'Sean Groff',
-    description:
-      'Sean Groff - Web Developer creating awesome content for JavaScript and React',
-    siteUrl: 'https://www.seangroff.dev',
+    siteUrl: config.siteUrl,
+    title: config.siteTitle,
+    twitterHandle: config.userTwitter,
+    description: config.siteDescription,
+    keywords: ['Software Engineer', 'React Consultant', 'JavaScript Developer'],
+    canonicalUrl: config.siteUrl,
+    image: config.siteLogo,
+    author: {
+      name: config.author,
+      minibio: config.minibio,
+    },
+    organization: {
+      name: config.organization,
+      url: config.siteUrl,
+      logo: config.siteLogo,
+    },
+    social: {
+      twitter: config.userTwitter,
+      fbAppID: '',
+    },
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
