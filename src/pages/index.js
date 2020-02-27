@@ -15,13 +15,13 @@ function BlogIndex({ data, location }) {
 
   const getEmojisCount = React.useCallback(timeToRead => {
     switch (true) {
-      case timeToRead >= 20:
+      case timeToRead >= 24:
         return 5
-      case timeToRead >= 15:
+      case timeToRead >= 12:
         return 4
-      case timeToRead >= 10:
+      case timeToRead >= 6:
         return 3
-      case timeToRead >= 5:
+      case timeToRead >= 3:
         return 2
       default:
         return 1
