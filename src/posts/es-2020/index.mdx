@@ -2,16 +2,17 @@
 title: 'ES2020: The Good Parts'
 date: '2020-05-11'
 categories: javascript
+featuredImage: ../../assets/2020.jpg
 tags: [javascript, js, es2020, ecmascript]
 ---
 
-## Introduction
+### Introduction
 
 I avoid a majority of JavaScripts pitfalls by following established best practices. Some parts of JavaScript I have no use for personally or professionally.
 This leaves my toolbelt with only "The Good Parts" of JavaScript. This is mostly subjective but I follow the basic rules of functional programming, well known established best patters, and most importantly code readability.
 With all of this in mind, I don't throw all the shiny brand new toys in my toolbelt. This post is going to go over the new features from the latest version of JavaScript I'll be using immediately.
 
-## Optional Chaining
+### Optional Chaining
 
 The optional chaining syntax `?.` allows you to safely access deeply nested object properties whether the property exists or not. If the object property does not exist, undefined will be returned.
 
@@ -92,7 +93,7 @@ function doSomething(onContent, onError) {
 
 In this scenario, I prefer the `if` statement but as Optional Chaining becomes more widely used that may change.
 
-## Nullish Coalescing Operator
+### Nullish Coalescing Operator
 
 The nullish coalescing operator `??` provides a short syntax that returns the left-hand side operand if the operand is _defined_ (NOT `null` or `undefined`), otherwise, the right-hand side operand is returned.
 If you're familiar with the logical or `||` operator you're probably asking yourself what the point of this new silly named operator is? Notice I used the word _defined_? This is different than a _falsy_ value.
@@ -149,13 +150,13 @@ let foo = (1 && 2) ?? 3 // 2 ✅
 
 I think mixing `??`, `&&`, `||` is a code smell but I'm not your boss!
 
-## Can I use these?
+### Can I use these?
 
 - [Nullish Coalescing on caniuse](https://caniuse.com/#feat=mdn-javascript_operators_nullish_coalescing)
 
 - [Optional Chaining Operator on caniuse](https://caniuse.com/#feat=mdn-javascript_operators_nullish_coalescing)
 
-## Conclusion
+### Conclusion
 
 As a mostly frontend engineer, I don't plan on using the remainder of the new ES2020 features very often. Except for `Promise.allSettled()` which I may be able to utilize in React to hide loading spinners that should disappear when a series of promises resolves 🤔.
 
