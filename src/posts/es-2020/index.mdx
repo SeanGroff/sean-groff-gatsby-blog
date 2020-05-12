@@ -1,0 +1,162 @@
+---
+title: 'ES2020: The Good Parts'
+date: '2020-05-11'
+categories: javascript
+tags: [javascript, js, es2020, ecmascript]
+---
+
+## Introduction
+
+I avoid a majority of JavaScripts pitfalls by following established best practices. Some parts of JavaScript I have no use for personally or professionally.
+This leaves my toolbelt with only "The Good Parts" of JavaScript. This is mostly subjective but I follow the basic rules of functional programming, well known established best patters, and most importantly code readability.
+With all of this in mind, I don't throw all the shiny brand new toys in my toolbelt. This post is going to go over the new features from the latest version of JavaScript I'll be using immediately.
+
+## Optional Chaining
+
+The optional chaining syntax `?.` allows you to safely access deeply nested object properties whether the property exists or not. If the object property does not exist, undefined will be returned.
+
+#### Problem
+
+```javascript
+let mammals = {
+  cat: { legs: 4, tail: true, carnivore: true },
+  dog: { legs: 4, tail: true, carnivore: true, petFriendly: true },
+}
+
+function getGoatLegsCount() {
+  let count = mammals.goat.legs
+  return count || 'Unknown'
+}
+
+let goatLegsCount = getGoatLegsCount() // Uncaught TypeError: Cannot read property 'legs' of undefined
+```
+
+#### Solution before Optional Chaining
+
+```javascript
+let mammals = {
+  cat: { legs: 4, tail: true, carnivore: true },
+  dog: { legs: 4, tail: true, carnivore: true, petFriendly: true },
+}
+
+function getGoatLegsCount() {
+  let count = mammals && mammals.goat && mammals.goat.legs // 😰
+  return count || 'Unknown'
+}
+
+let goatLegsCount = getGoatLegsCount() // 'Unknown'
+```
+
+#### Solution with Optional Chaining
+
+```javascript
+let mammals = {
+  cat: { legs: 4, tail: true, carnivore: true },
+  dog: { legs: 4, tail: true, carnivore: true, petFriendly: true },
+}
+
+function getGoatLegsCount() {
+  let count = mammals.goat?.legs // 🔥
+  return count || 'Unknown'
+}
+
+let goatLegsCount = getGoatLegsCount() // 'Unknown'
+```
+
+#### Notes
+
+Optional chaining also works on function calls and arrays but I don't prefer optional chaining for these currently.
+Here's an example of optional chaining on a function call directly from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).
+
+```javascript
+// Written as of ES2019
+function doSomething(onContent, onError) {
+  try {
+    // ... do something with the data
+  } catch (err) {
+    if (onError) {
+      // Testing if onError really exists
+      onError(err.message)
+    }
+  }
+}
+// Using optional chaining with function calls
+function doSomething(onContent, onError) {
+  try {
+    // ... do something with the data
+  } catch (err) {
+    onError?.(err.message) // no exception if onError is undefined
+  }
+}
+```
+
+In this scenario, I prefer the `if` statement but as Optional Chaining becomes more widely used that may change.
+
+## Nullish Coalescing Operator
+
+The nullish coalescing operator `??` provides a short syntax that returns the left-hand side operand if the operand is _defined_ (NOT `null` or `undefined`), otherwise, the right-hand side operand is returned.
+If you're familiar with the logical or `||` operator you're probably asking yourself what the point of this new silly named operator is? Notice I used the word _defined_? This is different than a _falsy_ value.
+
+#### Problem
+
+A common bug I'm certainly guilty of writing is using the `||` operator to account for _falsy_ values but forgetting to handle the number `0` which is a _falsy_ value.
+
+#### Solution before Nullish Coalescing
+
+```javascript
+let nothing = null
+let zero = 0
+let five = 5
+
+function getSuperSaiyanPowerLevel(number) {
+  return number || 9000
+}
+
+getSuperSaiyanPowerLevel(nothing) // 9000 ✅
+getSuperSaiyanPowerLevel(zero) // 9000 🐛
+getSuperSaiyanPowerLevel(five) // 5 ✅
+```
+
+#### Solution with Nullish Coalescing
+
+```javascript
+let nothing = null
+let zero = 0
+let five = 5
+
+function getSuperSaiyanPowerLevel(number) {
+  return number ?? 9000
+}
+
+getSuperSaiyanPowerLevel(nothing) // 9000 ✅
+getSuperSaiyanPowerLevel(zero) // 0 ✅
+getSuperSaiyanPowerLevel(five) // 5 ✅
+```
+
+#### Notes
+
+The precedence of the `??` operator is pretty low so I add parenthesis whenever I'm writing a complex expression. As a safety feature JavaScript prevents you from using `??` together with `&&` and `||` operators.
+
+```javascript
+let foo = 1 && 2 ?? 3; // Syntax error⛔️
+```
+
+To get around this you can add parenthesis to the expressions
+
+```javascript
+let foo = (1 && 2) ?? 3 // 2 ✅
+```
+
+I think mixing `??`, `&&`, `||` is a code smell but I'm not your boss!
+
+## Can I use these?
+
+- [Nullish Coalescing on caniuse](https://caniuse.com/#feat=mdn-javascript_operators_nullish_coalescing)
+
+- [Optional Chaining Operator on caniuse](https://caniuse.com/#feat=mdn-javascript_operators_nullish_coalescing)
+
+## Conclusion
+
+As a mostly frontend engineer, I don't plan on using the remainder of the new ES2020 features very often. Except for `Promise.allSettled()` which I may be able to utilize in React to hide loading spinners that should disappear when a series of promises resolves 🤔.
+
+Thanks for reading!
