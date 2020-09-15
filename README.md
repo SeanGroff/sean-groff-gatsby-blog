@@ -1,24 +1,30 @@
-# gatsby-starter-blog
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-Gatsby starter for creating a blog
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+## Getting Started
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+First, run the development server:
 
-Or [view the live demo here](https://gatsby-starter-blog-demo.netlify.com/).
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-## Running in development
-`gatsby develop`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Contributors
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+## Learn More
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table><tr><td align="center"><a href="http://caleboleary.com"><img src="https://avatars0.githubusercontent.com/u/12816579?v=4" width="100px;" alt="Caleb OLeary"/><br /><sub><b>Caleb OLeary</b></sub></a><br /><a href="#blog-caleboleary" title="Blogposts">📝</a></td></tr></table>
+To learn more about Next.js, take a look at the following resources:
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
