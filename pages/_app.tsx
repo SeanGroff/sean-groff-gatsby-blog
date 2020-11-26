@@ -1,4 +1,4 @@
-import { theme, ThemeProvider, CSSReset } from '@chakra-ui/core'
+import { theme, ThemeProvider, CSSReset } from '@chakra-ui/react'
 
 // TODO: Customize Theme
 const customTheme = {

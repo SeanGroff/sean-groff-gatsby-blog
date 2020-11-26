@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Box, Text } from '@chakra-ui/core'
+import { Box, Text } from '@chakra-ui/react'
 
 export default function Home() {
   return (
