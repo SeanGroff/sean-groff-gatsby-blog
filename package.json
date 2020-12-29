@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.0.0",
     "@mdx-js/loader": "^1.6.17",
     "@next/mdx": "^10.0.3",
+    "babel-plugin-import-glob-array": "^0.2.0",
     "framer-motion": "^2.9.4",
     "next": "^10.0.3",
     "next-mdx-remote": "^1.0.0",

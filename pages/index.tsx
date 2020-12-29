@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { Box, Text } from '@chakra-ui/react'
+import Blog from '../components/Blog'
 
-export default function Home() {
+function Home() {
   return (
     <Box>
       <Head>
@@ -11,6 +12,7 @@ export default function Home() {
 
       <Box as="main">
         <Text as="h1">Hello, World!</Text>
+        <Blog />
       </Box>
 
       <Box as="footer">
@@ -19,3 +21,5 @@ export default function Home() {
     </Box>
   )
 }
+
+export default Home
