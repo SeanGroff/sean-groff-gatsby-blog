@@ -1,24 +1,23 @@
 import Head from 'next/head'
-import { Box, Text } from '@chakra-ui/react'
 import Blog from '../components/Blog'
 
 function Home() {
   return (
-    <Box>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Sean Groff</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box as="main">
-        <Text as="h1">Hello, World!</Text>
+      <main>
+        <h1>Hello, World!</h1>
         <Blog />
-      </Box>
+      </main>
 
-      <Box as="footer">
-        <Text>Placeholder footer</Text>
-      </Box>
-    </Box>
+      <footer>
+        <p>Placeholder footer</p>
+      </footer>
+    </div>
   )
 }
 
