@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Blog from '../components/Blog'
+import Blog from '../src/components/Blog'
 
 function Home() {
   return (
