@@ -8,6 +8,6 @@ module.exports = {
   }),
   images: {
     loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/seangroff/image/upload',
+    path: 'https://res.cloudinary.com/seangroff',
   },
 }
