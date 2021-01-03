@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Blog from '../src/components/Blog'
+import Link from 'next/link'
 
 function Home() {
   return (
@@ -11,7 +11,9 @@ function Home() {
 
       <main>
         <h1>Hello, World!</h1>
-        <Blog />
+        <Link href="/posts">
+          <a>Browse All Articles</a>
+        </Link>
       </main>
 
       <footer>
