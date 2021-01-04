@@ -2,6 +2,7 @@ import { MdxRemote } from 'next-mdx-remote/types'
 
 export type FrontMatter = {
   title: string
+  description: string
   date: string
   categories: string | string[]
   featuredImage?: string | undefined
