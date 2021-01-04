@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import renderToString from 'next-mdx-remote/render-to-string'
-import type { FileName } from '../types'
+import type { FileName, Post } from '../types'
 
 export const postsDirectory = path.join(process.cwd(), 'src/posts')
 const fileNames = fs.readdirSync(postsDirectory)
@@ -31,4 +31,10 @@ export const getPostData = async (fileName: FileName) => {
     frontMatter: data,
     slug: _createSlugFromFileName(fileName),
   }
+}
+
+export const sortPostsByPublishDate = (posts: Post[]) => {
+  return [...posts].sort((a, b) => {
+    return Date.parse(b.frontMatter.date) - Date.parse(a.frontMatter.date)
+  })
 }

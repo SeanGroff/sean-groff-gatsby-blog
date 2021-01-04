@@ -9,10 +9,14 @@ export type FrontMatter = {
   tags: string[]
 }
 
+export type AnyObject = {
+  [key: string]: any
+}
+
 export type Post = {
   source: MdxRemote.Source
-  frontMatter: FrontMatter
-  slug: string
+  frontMatter: FrontMatter | AnyObject
+  slug: string | undefined
 }
 
 export type FileName = string | string[] | undefined

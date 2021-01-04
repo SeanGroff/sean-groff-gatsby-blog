@@ -2,7 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import hydrate from 'next-mdx-remote/hydrate'
 import { GetStaticProps } from 'next'
-import { getAllPostFileNames, getPostData } from '../../src/lib/posts'
+import {
+  getAllPostFileNames,
+  getPostData,
+  sortPostsByPublishDate,
+} from '../../src/lib/posts'
 import type { Post } from '../../src/types'
 
 type Props = {
@@ -56,10 +60,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = await Promise.all(
     postFilenames.map(async (filename) => await getPostData(filename))
   )
+  const sortedPosts = sortPostsByPublishDate(posts)
 
   return {
     props: {
-      posts,
+      posts: sortedPosts,
     },
   }
 }
