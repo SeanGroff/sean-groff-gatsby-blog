@@ -1,6 +1,6 @@
-import Head from 'next/head'
 import hydrate from 'next-mdx-remote/hydrate'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { NextSeo } from 'next-seo'
 import { TwitterShareButton } from 'react-share'
 import { getAllPostSlugs, getPostData } from '../../src/lib/posts'
 import {
@@ -25,18 +25,28 @@ function Post({ post }: Props) {
 
   return (
     <div>
-      <Head>
-        <title>{titleAndAuthor}</title>
-        <meta name="description" content={description} />
-        <meta name="image" content={cloudinaryImageUrl} />
-
-        {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content={twitterUsername} />
-        <meta name="twitter:title" content={titleAndAuthor} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={cloudinaryImageUrl} />
-      </Head>
+      <NextSeo
+        title={titleAndAuthor}
+        description={description}
+        openGraph={{
+          title: titleAndAuthor,
+          description,
+          type: 'website',
+          images: [
+            {
+              url: cloudinaryImageUrl,
+              width: 800,
+              height: 600,
+              alt: 'Blog post featured image',
+            },
+          ],
+        }}
+        twitter={{
+          handle: twitterUsername,
+          site: twitterUsername,
+          cardType: 'summary_large_image',
+        }}
+      />
       {source}
       <div style={{ marginTop: 16 }}>
         {/* TODO: Test Share button in Production */}
