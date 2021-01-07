@@ -47,6 +47,11 @@ function Post({ post }: Props) {
           cardType: 'summary_large_image',
         }}
       />
+      <h1>{title}</h1>
+      {/* TODO: Add GitHub Url to edit post */}
+      <a href="#" rel="nofollow">
+        Edit ✏️
+      </a>
       {source}
       <div style={{ marginTop: 16 }}>
         {/* TODO: Test Share button in Production */}
