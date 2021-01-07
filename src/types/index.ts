@@ -16,7 +16,7 @@ export type AnyObject = {
 export type Post = {
   source: MdxRemote.Source
   frontMatter: FrontMatter | AnyObject
-  slug: string | undefined
+  slug: string
 }
 
-export type FileName = string | string[] | undefined
+export type FileName = string

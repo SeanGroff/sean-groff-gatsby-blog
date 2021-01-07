@@ -8,7 +8,6 @@ export const postsDirectory = path.join(process.cwd(), 'src/posts')
 const fileNames = fs.readdirSync(postsDirectory)
 
 const _createSlugFromFileName = (fileName: FileName) => {
-  if (typeof fileName !== 'string') return
   return `/posts/${fileName?.replace(/\.mdx$/, '')}`
 }
 
