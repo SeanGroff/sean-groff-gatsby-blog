@@ -39,7 +39,7 @@ function Posts({ posts }: Props) {
                   )}
                   <p>{frontMatter.date}</p>
                   <p>{frontMatter.description}</p>
-                  {frontMatter.tags.map((tag) => (
+                  {frontMatter.tags.map((tag: string) => (
                     <span key={tag} style={{ marginRight: 4 }}>
                       {tag}
                     </span>
