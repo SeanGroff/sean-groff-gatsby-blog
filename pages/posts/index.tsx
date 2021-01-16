@@ -41,15 +41,15 @@ function Posts({ posts }: Props) {
                   <div className="text-sm text-gray-600">{formattedDate}</div>
                   <Link href={post.slug}>
                     <a>
-                      <h3 className="mt-2 text-xl font-semibold truncate">
+                      <h3 className="mt-2 text-xl font-semibold line-clamp-1">
                         {frontMatter.title}
                       </h3>
                     </a>
                   </Link>
-                  <div className="mt-6 leading-tight text-gray-600">
+                  <div className="mt-6 leading-tight text-gray-600 line-clamp-2">
                     {frontMatter.description}
                   </div>
-                  <div className="mt-6 text-gray-500">
+                  <div className="mt-6 text-gray-500 line-clamp-1">
                     {frontMatter.tags.map((tag: string) => (
                       <span
                         key={tag}
