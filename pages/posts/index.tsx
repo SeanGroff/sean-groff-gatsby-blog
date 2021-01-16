@@ -49,11 +49,11 @@ function Posts({ posts }: Props) {
                   <div className="mt-6 leading-tight text-gray-600 line-clamp-2">
                     {frontMatter.description}
                   </div>
-                  <div className="mt-6 text-gray-500 line-clamp-1">
+                  <div className="mt-6 line-clamp-1">
                     {frontMatter.tags.map((tag: string) => (
                       <span
                         key={tag}
-                        className="px-4 py-1 mr-2 text-xs font-semibold leading-loose tracking-wider text-gray-900 uppercase bg-gray-100 rounded-full"
+                        className="px-4 py-1 mr-2 text-xs font-semibold leading-loose tracking-wider text-gray-800 uppercase bg-gray-100 rounded-full"
                       >
                         {tag}{' '}
                       </span>
