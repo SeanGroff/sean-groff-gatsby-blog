@@ -1,8 +1,31 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import readingTime from 'reading-time'
 import renderToString from 'next-mdx-remote/render-to-string'
 import type { FileName, Post } from '../types'
+
+const getEmojisByReadingTime = (time: number) => {
+  const threeMinutes = 3
+  const fiveMinutes = 5
+  const tenMinutes = 10
+  const twentyMinutes = 20
+
+  if (time <= threeMinutes) {
+    return '☕️'
+  }
+  if (time <= fiveMinutes) {
+    return '☕️ ☕️'
+  }
+  if (time <= tenMinutes) {
+    return '☕️ ☕️ ☕️'
+  }
+  if (time <= twentyMinutes) {
+    return '☕️ ☕️ ☕️ ☕️'
+  }
+
+  return '☕️ ☕️ ☕️ ☕️ ☕️'
+}
 
 export const postsDirectory = path.join(process.cwd(), 'src/posts')
 const fileNames = fs.readdirSync(postsDirectory)
@@ -21,11 +44,15 @@ export const getAllPostFileNames = () => {
   return fileNames
 }
 
-export const getPostData = async (fileName: FileName) => {
+export const getPostData = async (fileName: FileName): Promise<Post> => {
   const fileContent = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf8')
   const { content, data } = matter(fileContent)
   const mdxSource = await renderToString(content)
+  const { minutes } = readingTime(content)
+
   return {
+    readingTime: Math.ceil(minutes),
+    emojis: getEmojisByReadingTime(Math.ceil(minutes)),
     source: mdxSource,
     frontMatter: data,
     slug: _createSlugFromFileName(fileName),

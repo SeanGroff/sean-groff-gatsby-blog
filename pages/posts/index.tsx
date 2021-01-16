@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import hydrate from 'next-mdx-remote/hydrate'
+import ReadingTime from '../../src/components/ReadingTime'
+import Tags from '../../src/components/Tags'
 import { GetStaticProps } from 'next'
 import {
   getAllPostFileNames,
   getPostData,
   sortPostsByPublishDate,
 } from '../../src/lib/posts'
+import { hydrateAllPosts } from '../../src/lib/hydrate'
 import { getLongDate } from '../../src/lib/dates'
 import type { Post } from '../../src/types'
 
@@ -15,16 +17,13 @@ type Props = {
 }
 
 function Posts({ posts }: Props) {
-  const _posts = posts.map((post) => {
-    const source = hydrate(post.source)
-    return { source, frontMatter: post.frontMatter, slug: post.slug }
-  })
+  const hydratedPosts = hydrateAllPosts(posts)
 
   return (
     <div>
       <ul className="flex flex-col items-center flex-grow-0 gap-4">
-        {_posts.map((post) => {
-          const { frontMatter } = post
+        {hydratedPosts.map((post) => {
+          const { frontMatter, emojis, readingTime } = post
           const formattedDate = getLongDate(frontMatter.date)
           return (
             <li key={frontMatter.title}>
@@ -41,24 +40,16 @@ function Posts({ posts }: Props) {
                   <div className="text-sm text-gray-600">{formattedDate}</div>
                   <Link href={post.slug}>
                     <a>
-                      <h3 className="mt-2 text-xl font-semibold line-clamp-1">
+                      <h3 className="mt-1 text-xl font-semibold line-clamp-1">
                         {frontMatter.title}
                       </h3>
                     </a>
                   </Link>
-                  <div className="mt-6 leading-tight text-gray-600 line-clamp-2">
+                  <ReadingTime time={readingTime} emojis={emojis} />
+                  <div className="mt-4 leading-tight text-gray-600 line-clamp-2">
                     {frontMatter.description}
                   </div>
-                  <div className="mt-6 line-clamp-1">
-                    {frontMatter.tags.map((tag: string) => (
-                      <span
-                        key={tag}
-                        className="px-4 py-1 mr-2 text-xs font-semibold leading-loose tracking-wider text-gray-800 uppercase bg-gray-100 rounded-full"
-                      >
-                        {tag}{' '}
-                      </span>
-                    ))}
-                  </div>
+                  <Tags>{frontMatter.tags}</Tags>
                 </div>
               </div>
             </li>
