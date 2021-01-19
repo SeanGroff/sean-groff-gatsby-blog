@@ -24,7 +24,7 @@ function Post({ post }: Props) {
   const cloudinaryImageUrl = `${cloudinaryUrl}/${featuredImage}`
 
   return (
-    <div>
+    <article className="max-w-full">
       <NextSeo
         title={titleAndAuthor}
         description={description}
@@ -47,22 +47,24 @@ function Post({ post }: Props) {
           cardType: 'summary_large_image',
         }}
       />
-      <h1>{title}</h1>
-      {/* TODO: Add GitHub Url to edit post */}
-      <a href="#" rel="nofollow">
-        Edit ✏️
-      </a>
-      {source}
-      <div style={{ marginTop: 16 }}>
-        {/* TODO: Test Share button in Production */}
-        <TwitterShareButton
-          title={titleAndAuthor}
-          url={`${baseUrl}${post.slug}`}
-        >
-          Click here to share this article on Twitter ❤️
-        </TwitterShareButton>
+      <div className="max-w-screen-md mx-auto">
+        <h1>{title}</h1>
+        {/* TODO: Add GitHub Url to edit post */}
+        <a href="#" rel="nofollow">
+          Edit ✏️
+        </a>
+        {source}
+        <div style={{ marginTop: 16 }}>
+          {/* TODO: Test Share button in Production */}
+          <TwitterShareButton
+            title={titleAndAuthor}
+            url={`${baseUrl}${post.slug}`}
+          >
+            Click here to share this article on Twitter ❤️
+          </TwitterShareButton>
+        </div>
       </div>
-    </div>
+    </article>
   )
 }
 

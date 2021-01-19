@@ -1,9 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import mdxPrism from 'mdx-prism'
 import readingTime from 'reading-time'
 import renderToString from 'next-mdx-remote/render-to-string'
 import type { FileName, Post } from '../types'
+import MDXComponents from '../components/MDXComponents'
 
 const getEmojisByReadingTime = (time: number) => {
   const threeMinutes = 3
@@ -47,7 +49,16 @@ export const getAllPostFileNames = () => {
 export const getPostData = async (fileName: FileName): Promise<Post> => {
   const fileContent = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf8')
   const { content, data } = matter(fileContent)
-  const mdxSource = await renderToString(content)
+  const mdxSource = await renderToString(content, {
+    components: MDXComponents,
+    mdxOptions: {
+      remarkPlugins: [
+        require('remark-slug'),
+        require('remark-autolink-headings'),
+      ],
+      rehypePlugins: [mdxPrism],
+    },
+  })
   const { minutes } = readingTime(content)
 
   return {
