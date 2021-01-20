@@ -6,11 +6,11 @@ categories: react
 tags: [react, hooks, reducer, useReducer]
 ---
 
-### Introduction
+## Introduction
 
 The `useReducer` hook provides a flexible solution to complex state. The `useState` hook we all know and love is actually built on top of `useReducer`. If you don't understand how a reducer function works you'll likely always reach for `useState`. This isn't the worst thing in the world, but I hope after reading this article you'll understand exactly how to implement `useReducer` and have a decent idea when to use `useReducer`.
 
-### What is a Reducer?
+## What is a Reducer?
 
 A Reducer is a function that takes two values and reduces them down to one value.
 
@@ -24,7 +24,7 @@ The `fullNameReducer` function accepts two values as its parameters and returns 
 
 The reducer function was popularized by Redux but existed long before Redux. I only say this because many people think `Redux === Reducer`. It's important to go into this knowing `Redux !== Reducer`.
 
-### When to use useReducer
+## When to use useReducer
 
 The first question I had when I first read the React docs was "When should I use `useReducer` instead of `useState`. I've seen different opinions on this subject across the internet but I prefer `useReducer` when I need to update more than a single entity. I'll explain with code.
 
@@ -116,13 +116,13 @@ Outside of this fetch example, it is common to pass a setter function. There are
 
 Now that you have a decent opinion of when to use `useReducer` instead of `useState` lets learn the `useReducer` API 🚀.
 
-### Learning the API
+## Learning the API
 
 First off, read the docs. Seriously, the [React docs](https://reactjs.org/docs/hooks-reference.html#usereducer) are top notch and very approachable.
 
 With that out of the way, the `useReducer` hook accepts three arguments. I'm only covering the first two arguments in this blog post. See? Reading the docs does matter! 🤔
 
-### Initial State
+## Initial State
 
 To keep you on your toes I'm going to begin with the second argument to `useReducer` only because it's simple to Grok and provides some mental context to the reducer function which is the first argument to `useReducer`. If you're familiar with Redux you can skip ahead.
 
@@ -147,7 +147,7 @@ const [state, dispatch] = React.useReducer(exampleReducer, initialState)
 
 In a more real world example, you would likely define initial state inline if the initial state is a simple primitive value.
 
-### Reducer
+## Reducer
 
 The first argument to `useReducer` is a reducer function. The blueprint for the `useReducer` reducer function is:
 
@@ -163,7 +163,7 @@ Reducer accepts the previous state for its first argument and the action for its
 
 Something that may not be obvious at first is the action can be anything...including a function!
 
-### Return value of useReducer
+## Return value of useReducer
 
 The `useReducer` hook returns an `Array` of two items. The first item is always your `state`. The second item is always a `dispatch` function.
 
@@ -221,7 +221,7 @@ Speaking of flexibility, `useReducer` returns an Array of two items. Thanks to J
 const [name, setName] = React.useReducer(nameReducer, 'Sean')
 ```
 
-### Conclusion
+## Conclusion
 
 The `useReducer` hook is categorized as an advanced hook in the React docs. When compared to `useState` I'd agree. However, `useEffect` is a basic hook but is far more advanced to learn than `useReducer`. My worry is this categorization prevents some from exploring `useReducer` when `useState` works well enough. Hopefully reading this article shows how approachable and flexible `useReducer` is 😎.
 

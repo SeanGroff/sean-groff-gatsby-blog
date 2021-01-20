@@ -6,11 +6,11 @@ categories: linux
 tags: [linux, unix, terminal, permissions, chmod]
 ---
 
-### Permission Denied
+## Permission Denied
 
 Permission Denied! If you've used any Unix-Like Operating System you've no doubt seen these two words in the terminal. A quick Google search says to use `chmod /path/to/file 400`. You have no idea what `400` means but you still get the `Permission Denied` error message. You see some posts that say `chmod /path/to/file 777`. You have no idea what `777` means but you no longer receive the `Permission Denied` error! You see some comments mentioning this is a big security risk. You shrug your shoulders and carry on with your day only to repeat this Google search days, weeks, or months later...
 
-### Viewing Permissions
+## Viewing Permissions
 
 From your terminal type:
 
@@ -93,11 +93,11 @@ Let's break down the permissions of `.somefile`. I'm going to separate each grou
 
 The `.somefile` is a **File** (`-`), the **Owner** can **Read** (`r`) the file, **Write** (`w`) to the file, and can NOT **Execute** (`-`) the file.
 
-### Changing Permissions
+## Changing Permissions
 
 To change permissions of a file or directory in Linux or any Unix-like OS we use the `chmod` command. There are two ways to change the permissions of a file or directory. The Text method and the Numeric method. I've never actually seen the Text method used so we are only going to demystify the Numeric method.
 
-### Numeric Method
+## Numeric Method
 
 Read, Write, and Execute each have their own numeric value.
 
@@ -140,7 +140,7 @@ Our `Total` for the Owner group is `7`.
 
 The Numeric Value of the `stuff.txt` file is `761`.
 
-### Examples
+## Examples
 
 Bob has a file `secret.pem` and he wants to change this files permissions so only the owner can read the file. Bob does not want ANYONE to write or execute the file. What is the numeric value Bob should use in his `chmod` command?
 
@@ -166,6 +166,6 @@ Charles has a file called `index.js` on a server. Charles wants the Owner to be 
 chmod index.js 641
 ```
 
-### Unix Permissions Demystified
+## Unix Permissions Demystified
 
 If you made it this far, the letters and numbers should no longer appear as random magical letters and numbers. Bookmark this blog post to save you a Google search(s). If you enjoyed this blog post feel free to follow along with me on Twitter!

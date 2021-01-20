@@ -6,13 +6,13 @@ categories: react
 tags: [react, js, javascript]
 ---
 
-### What are Refs?
+## What are Refs?
 
 Refs? Refs in React 16.3? If you're still a little green with React it's not unusual to have never heard of refs. I completed a couple projects at work before I was introduced to **refs**. In this article I will briefly introduce **refs** and why they aren't typically taught when first learning React. I will spend the rest of this article introducing you to the **createRef() API** that was released in React version 16.3.
 
 **If you know what refs are in React feel free to skip ahead to the Refs in React section.**
 
-### Why Refs?
+## Why Refs?
 
 You can do just about everything you need in React using **props** and **state**. So why do you need **refs**? One common use case is managing focus on a text input element.
 
@@ -20,7 +20,7 @@ Let's say I want the text element to focus after pressing enter to submit some d
 
 Here's where the **ref** comes in. From the **handleSubmit()** lifecycle method, how do we set the text input element to be **focused** so the user can easily enter more data? How do we **REF**erence the text input element to **focus**?
 
-### Refs
+## Refs
 
 Prior to React v16.3 the **callback ref** was the preferred way to create and use refs. Callback refs are fine. I prefer the **createRef()** **API** to the **callback ref** for a couple reasons.
 
@@ -28,11 +28,11 @@ If you use an inline callback function for your ref a new function is created fo
 
 The inline callback function will also be called twice during updates. The first call produces a **null** value before the element is returned on the second call. To see this in action checkout the [Callback Ref Code Sandbox Example](https://codesandbox.io/s/zl84j0m52l)
 
-### CreateRef API in React v16.3
+## CreateRef API in React v16.3
 
 You can create and use a ref in three easy steps using the **createRef API**.
 
-### Ref Creation
+## Ref Creation
 
 In your **class constructor method** create a class property and assign **React.createRef()** to it.
 
@@ -47,7 +47,7 @@ class RefExample extends React.Component {
 }
 ```
 
-### Add Ref to DOM Element
+## Add Ref to DOM Element
 
 Tell React to associate the **inputNewItem** we created in the **constructor** with the input ref.
 
@@ -59,7 +59,7 @@ render() {
 }
 ```
 
-### Use the Ref!
+## Use the Ref!
 
 Inside our **handleSubmit** method let's tell React to have the input focused.
 
@@ -75,7 +75,7 @@ From the React Docs
 
 > React will assign the `current` property with the DOM element when the component mounts, and assign it back to `null` when it unmounts. `ref` updates happen before `componentDidMount` or `componentDidUpdate` lifecycle hooks.
 
-### Refs in TypeScript
+## Refs in TypeScript
 
 Here's how a ref using the **createRef API** is defined in **TypeScript.**
 

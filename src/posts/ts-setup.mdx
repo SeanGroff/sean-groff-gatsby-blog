@@ -6,7 +6,7 @@ categories: react
 tags: [react, prettier, typescript, eslint, vscode, react-native]
 ---
 
-### Introduction
+## Introduction
 
 This short guide will provide you a consistent and reusable development workflow for new or existing [**React Native**][1] projects. The more effort you put into writing quality code, the less time you spend on debugging. You can increase your code quality and reduce the time spent on debugging with a consistent development workflow. In this guide I will show you how to configure VS Code to handle your code formatting, linting, and type checking.
 
@@ -14,7 +14,7 @@ Testing is outside the scope of this article but highly recommended.
 
 How to use TypeScript is also outside the scope of this article.
 
-### Getting Started
+## Getting Started
 
 For this post we are going to start from a newly created project. You can skip ahead to the TypeScript setup if you're working on an existing project. Let's initialize our React Native app! For this article we'll use the [**React Native CLI**][2]**.**
 
@@ -31,7 +31,7 @@ Install the following extensions:
 - [**Prettier Code Formatter**][6]
 - [**TSLint**][7]
 
-### TypeScript Setup
+## TypeScript Setup
 
 First let's install and setup TypeScript for our React Native app by entering the following commands in the terminal. (I use the Yarn package manager)
 
@@ -49,7 +49,7 @@ Here's what we just did:
 - create an empty React Native TypeScript Transformer config file, which we'll configure shortly
 - install [**typings**][10] for React and React Native allowing TypeScript to type check our React Native code
 
-### Configure TypeScript
+## Configure TypeScript
 
 Here are the settings I enabled/disabled and I recommend you do as well to get started. As you gain more experience and become comfortable with TypeScript you'll tweak this file more to your preferences.
 
@@ -74,7 +74,7 @@ In the Strict Type-Checking Options and Addition Checks sections make the necess
 
 **_Note_**: I also prefer to change the **target** property to **"ES2015"** to use async/await without a Promise declaration.
 
-### Configure the React Native TypeScript Transformer
+## Configure the React Native TypeScript Transformer
 
 Open the **rn-cli.config.js** file we created earlier and copy paste the following code, then save and close this file.
 
@@ -89,7 +89,7 @@ module.exports = {
 }
 ```
 
-### TypeScript Migration
+## TypeScript Migration
 
 Rename the generated **App.js f**ile in our project to **App.tsx**.
 
@@ -99,7 +99,7 @@ All new files containing JSX should use the **.tsx** extension and the **.ts** e
 
 > Now is a great time to go through your existing **.tsx** and **.ts** files and fix any TypeScript errors.
 
-### TSLint Installation and Setup
+## TSLint Installation and Setup
 
 First, let's install **TSLint** and some **TSLint** extensions I personally prefer for React Native development.
 
@@ -134,7 +134,7 @@ Open the **tslint.json** file and configure it like so:
 
 The **rules** section is my personal preferences. You're free to roll your own rules.
 
-### Lint your Code
+## Lint your Code
 
 From the root of your project open the **package.json** file and add the following **npm lint script** to the **scripts** section
 
@@ -150,7 +150,7 @@ Now from your terminal you can run **yarn lint.** You know you enjoy fixing lint
 
 `$ yarn lint`
 
-### Prettier Setup
+## Prettier Setup
 
 [**Prettier**][18] will auto-format your code based on it's rules.
 
@@ -183,7 +183,7 @@ Use my prettier rules or roll your own based on your preferences. Here are my Pr
 "trailingComma": "es5"
 ```
 
-### Prettier Code Formatter
+## Prettier Code Formatter
 
 [**Prettier**][18] will auto-format your code based on it's rules whenever you save a file.
 

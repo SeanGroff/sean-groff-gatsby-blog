@@ -7,7 +7,7 @@ featuredImage: venus-fly-trap_ik97ex.jpg
 tags: [react, hooks, useeffect, javascript, js]
 ---
 
-### The Bug Hunt 🐛 🏹
+## The Bug Hunt 🐛 🏹
 
 I recently had to fix a bug that made it to Production at work.
 
@@ -32,7 +32,7 @@ useEffect(() => {
 
 Can you spot the infinite loop?
 
-### The Trap Explained 💣
+## The Trap Explained 💣
 
 When reading a `useEffect` I recommend reading the dependency array first.
 
@@ -45,7 +45,7 @@ If the value of `fooBar` changes, execute the `useEffect` callback. Set `fooBar`
 
 There is an infinite loop.
 
-### Solution 1 - Dispatch function update 🙋
+## Solution 1 - Dispatch function update 🙋
 
 The [React](https://reactjs.org/docs/hooks-state.html) `useState` hook returns an array of two items. The current `state` and a function that updates it.
 Unbeknownst to many, this function accepts a callback function providing you access to the previous `state`.
@@ -63,7 +63,7 @@ useEffect(() => {
 
 Now, the `useEffect` no longer depends on the `fooBar` value change to execute, solving our infinite loop issue!
 
-### Solution 2 - useReducer 🧙‍♂️
+## Solution 2 - useReducer 🧙‍♂️
 
 I don't want `useReducer` to hijack the main topic of this blog post but it is a viable solution.
 
@@ -87,7 +87,7 @@ useEffect(() => {
 
 Our `useEffect` has no dependency on the `state` we are updating which also solves our infinite loop issue.
 
-### Conclusion 🧑‍🏫
+## Conclusion 🧑‍🏫
 
 A safe `useState` rule to follow when updating state based on the previous state, is to always use the function update pattern.
 Keep an eye out for this type of bug when reviewing code that contains a `useEffect`.

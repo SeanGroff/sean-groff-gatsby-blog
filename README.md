@@ -24,7 +24,7 @@ Upgrade Dependencies
 npm run upgrade
 ```
 
-### Troubleshooting
+## Troubleshooting
 
 Reinstall
 

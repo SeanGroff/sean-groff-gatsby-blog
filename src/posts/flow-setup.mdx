@@ -6,13 +6,13 @@ categories: react
 tags: [react, prettier, flow, eslint, vscode, react-native]
 ---
 
-### Intro
+## Intro
 
 This short guide will provide you a consistent and reusable development workflow for all [**React**][1]/[**React Native**][2] projects. The more effort you put into writing quality code, the less time you spend on debugging. You can increase your code quality and reduce the time spent on debugging with a consistent development workflow. In this guide I will show you how to configure your editor to handle your code formatting, linting, and type checking.
 
 Test Driven Development and a preconfigured build configuration are recommended. I won't go into much detail on either of these. I recommend [**create-react-app**][4] for the web and using the [**React Native CLI**][5] for mobile development. Both require zero build configuration. [**Jest**][6] is fantastic for testing [**React**][1].
 
-### Installation
+## Installation
 
 To get started download and install [**VS Code**][7]. You can launch [**VS Code**][8] from the terminal, [**here's how**][9].
 
@@ -28,7 +28,7 @@ Open the SweetApp project with [**VS Code**][8].
 
 Once you have [**VS Code**][8] open, click the Extensions button in the Activity Bar. Install the following extensions:
 
-### ESLint Setup
+## ESLint Setup
 
 We will install [**ESLint**][10] using Airbnb's linter rules. Refer to [**Airbnb's JavaScript Github Repo**][11] for the installation instructions.
 
@@ -39,7 +39,7 @@ You should now see an `.eslintrc` file in your project. Open the `eslintrc` file
 
 ![][13]
 
-### Prettier Setup
+## Prettier Setup
 
 We will configure Prettier to format our code based on our ESLint rules.
 
@@ -68,7 +68,7 @@ Press `CMD + ,` if you're on a Mac to open your [**VS Code Workspace Settings**]
 
     "prettier.eslintIntegration": true
 
-### Flow Setup
+## Flow Setup
 
 [**Flow**][17] is a static type checker for JavaScript and is included in your project if you use the [**React Native CLI**][5] or [**create-react-app**][4] build configurations.
 
@@ -177,13 +177,13 @@ From the same directory as your `package.json` file run the following terminal c
 
 The [**Flow server**][28] is running and will perform type checking on any file with a `// @flow` annotation at the top of the file.
 
-### Testing your new development workflow
+## Testing your new development workflow
 
 Open the `index.ios.js` file in the `SweetApp` project.
 
 > Don't use the `index.android.js` file as the `.flowconfig` file ignores it. [**See this post on Stack Overflow**][29] to use Flow with `.android` files.
 
-### ESLint Linter
+## ESLint Linter
 
 You should notice red squiggly lines in your code. You can hover your mouse cursor over the red squiggly line and [**ESLint**][10] will tell you the linter rule causing the warning.
 
@@ -193,7 +193,7 @@ Delete the semicolon at the end of the `return` statement inside the class `rend
 
 > If you are not receiving any linter warnings please review the ESLint Setup portion of this guide.
 
-### Prettier Code Formatter
+## Prettier Code Formatter
 
 [**Prettier**][15] will auto-format your code based on it's rules whenever you save a file.
 
@@ -207,7 +207,7 @@ Now save the file and watch the magic of [**Prettier**][15] take effect!
 
 The test array is now formatted correctly!
 
-### Flow Type Checking
+## Flow Type Checking
 
 To ensure [**Flow**][17] is working run the `flow start` npm script to start the [**Flow server**][28] that runs in the background.
 

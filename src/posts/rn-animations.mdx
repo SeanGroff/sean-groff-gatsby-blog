@@ -6,7 +6,7 @@ categories: react
 tags: [react, react-native, animations]
 ---
 
-### What are Animations in React Native?
+## What are Animations in React Native?
 
 **Animation** can be defined as manipulating images or objects to appear as moving images or objects.
 
@@ -14,13 +14,13 @@ tags: [react, react-native, animations]
 
 Animation on mobile creates an intuitive human User Interface. [Smashing Magazine][2] has a fantastic article on the importance of animation for mobile devices. In this article we will cover how to get started using the [Animated][3] animation system provided by React Native.
 
-### Local Setup
+## Local Setup
 
 None!
 
 For this article we'll do all of our code and device emulation from the browser thanks to Expo and their amazing Snack tool. [Expo Snack][4] is React Native in the browser. The Snack tool provides a text editor and side-by-side phone emulator for Android and iOS!
 
-### Getting started with Animated
+## Getting started with Animated
 
 There are three required values to every animation we define using the [Animated][3] library.
 
@@ -38,11 +38,11 @@ Fire up your own Expo Snack at [snack.expo.io][4]. Type out the code you see fro
 
 [Tennis Ball Spring Animation Example](https://snack.expo.io/@sgroff04/animated-tennis-ball)
 
-### Three Required Values
+## Three Required Values
 
 Let's break the Tennis Ball Animation down to the three values we must define. When creating an animation it's easy to get overwhelmed. To help simplify the process I like to break animations into three parts. Breaking the problem down into smaller more approachable parts is what programmers like to call decomposition.
 
-### One
+## One
 
 Define the starting value or the starting location of the animation in reference to the exact X, Y coordinates on the screen.
 
@@ -60,7 +60,7 @@ As you probably now understand:
 
 Creates a new animation instance with a starting location `10, 450` along the X, Y axis of the screen.
 
-### Two
+## Two
 
 Define the end value or ending location of the animation.
 
@@ -90,7 +90,7 @@ Animated.spring(this.moveAnimation, {
 }).start()
 ```
 
-### Three
+## Three
 
 Define which element we are animating.
 
@@ -107,15 +107,15 @@ With this knowledge we should now be able to identify what element we are animat
 
 We've essentially instructed the `Animated.View` component to always be at the position [interpolated][10] by the animation.
 
-### Main Takeaway
+## Main Takeaway
 
 Remember the three values to define every time you create an animation in React Native. This is a fundamental building block you'll be able to use for the simplest animations all the way up to the most complex animations. I've intentionally kept the article short to focus on this fundamental approach to building animations.
 
-### Hammer Home
+## Hammer Home
 
 To hammer home what we've learned I've created two more Expo Snack Examples. I want you to code and play with these on your own time. When coding these two Expo Snacks, identify the three values you must define to create these animations. Keep the [React Native docs][11] handy for reference!
 
-### Examples
+## Examples
 
 [Fade In Animation Example](https://snack.expo.io/@sgroff04/animated-fade-in)
 
