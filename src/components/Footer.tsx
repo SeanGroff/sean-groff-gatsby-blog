@@ -3,9 +3,9 @@ import Twitter from './Twitter'
 
 function Footer() {
   return (
-    <footer>
+    <footer className="flex flex-col items-center justify-around p-8">
       <span>{`© Sean Groff ${new Date().getFullYear()}`}</span>
-      <span>
+      <span className="flex flex-row items-center justify-around w-20 mt-5">
         <GitHub />
         <Twitter />
       </span>
