@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         description="Sean Groff - Web Developer creating awesome content for JavaScript and React"
       />
       <Header />
-      <main className="p-4 antialiased text-gray-900 bg-gray-200">
+      <main className="p-4 antialiased text-gray-900 bg-white">
         <Component {...pageProps} />
       </main>
       <Footer />

@@ -24,7 +24,7 @@ function Post({ post }: Props) {
   const cloudinaryImageUrl = `${cloudinaryUrl}/${featuredImage}`
 
   return (
-    <article className="max-w-full">
+    <article className="max-w-full prose prose-purple">
       <NextSeo
         title={titleAndAuthor}
         description={description}

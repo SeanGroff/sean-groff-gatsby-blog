@@ -20,38 +20,40 @@ function Posts({ posts }: Props) {
   const hydratedPosts = hydrateAllPosts(posts)
 
   return (
-    <div>
+    <div className="mx-auto">
       <ul className="flex flex-col items-center flex-grow-0 gap-4">
         {hydratedPosts.map((post) => {
           const { frontMatter, emojis, readingTime } = post
           const formattedDate = getLongDate(frontMatter.date)
           return (
             <li key={frontMatter.title}>
-              <div className="max-w-screen-sm overflow-hidden bg-white border rounded-lg">
-                {frontMatter?.featuredImage && (
-                  <Image
-                    src={`/${frontMatter.featuredImage}`}
-                    alt={`Featured image for the ${frontMatter.title} article`}
-                    height={384}
-                    width={640}
-                  />
-                )}
-                <div className="max-w-lg p-6 md:max-w-none">
-                  <div className="text-sm text-gray-600">{formattedDate}</div>
-                  <Link href={post.slug}>
-                    <a>
-                      <h3 className="mt-1 text-xl font-semibold line-clamp-1">
+              <Link href={post.slug}>
+                <a>
+                  <div className="max-w-screen-sm overflow-hidden bg-white rounded-lg shadow-md group">
+                    {frontMatter?.featuredImage && (
+                      <Image
+                        src={`/${frontMatter.featuredImage}`}
+                        alt={`Featured image for the ${frontMatter.title} article`}
+                        height={384}
+                        width={640}
+                      />
+                    )}
+                    <div className="max-w-lg p-6 md:max-w-none">
+                      <div className="text-sm text-gray-600">
+                        {formattedDate}
+                      </div>
+                      <h3 className="mt-1 text-xl font-semibold line-clamp-1 group-hover:text-purple-600">
                         {frontMatter.title}
                       </h3>
-                    </a>
-                  </Link>
-                  <ReadingTime time={readingTime} emojis={emojis} />
-                  <div className="mt-4 leading-tight text-gray-600 line-clamp-2">
-                    {frontMatter.description}
+                      <ReadingTime time={readingTime} emojis={emojis} />
+                      <div className="mt-4 leading-tight text-gray-600 line-clamp-2">
+                        {frontMatter.description}
+                      </div>
+                      <Tags>{frontMatter.tags}</Tags>
+                    </div>
                   </div>
-                  <Tags>{frontMatter.tags}</Tags>
-                </div>
-              </div>
+                </a>
+              </Link>
             </li>
           )
         })}
