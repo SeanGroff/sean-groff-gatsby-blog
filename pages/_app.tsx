@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import { MDXProvider } from '@mdx-js/react'
 import type { AppProps } from 'next/app'
@@ -14,10 +15,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         title="Sean Groff"
         description="Sean Groff - Web Developer creating awesome content for JavaScript and React"
       />
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
-      <main className="p-4 antialiased text-gray-900 bg-white">
+      <div className="p-4 antialiased text-gray-900 bg-white">
         <Component {...pageProps} />
-      </main>
+      </div>
       <Footer />
     </MDXProvider>
   )

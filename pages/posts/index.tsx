@@ -20,7 +20,7 @@ function Posts({ posts }: Props) {
   const hydratedPosts = hydrateAllPosts(posts)
 
   return (
-    <div className="mx-auto">
+    <main className="mx-auto">
       <ul className="flex flex-col items-center flex-grow-0 gap-4">
         {hydratedPosts.map((post) => {
           const { frontMatter, emojis, readingTime } = post
@@ -58,7 +58,7 @@ function Posts({ posts }: Props) {
           )
         })}
       </ul>
-    </div>
+    </main>
   )
 }
 
