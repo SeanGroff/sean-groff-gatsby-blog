@@ -4,6 +4,7 @@ description: 'Into the wilderness of CSS Grid.'
 date: '2021-01-23'
 categories: css
 featuredImage: grid_k7isrt.jpg
+type: 'wilderness'
 tags: [css, grid]
 ---
 
@@ -20,5 +21,22 @@ tags: [css, grid]
 Creates a block level grid.
 
 ### Columns & Rows
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20px 20px;
+}
+```
+
+### Gaps
+
+```css
+.container {
+  display: grid;
+  grid-gap: 8px;
+}
+```
 
 ## Grid Items
