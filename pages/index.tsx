@@ -21,7 +21,7 @@ function Home({ posts }: Props) {
   const hydratedPosts = hydrateAllPosts(posts)
 
   return (
-    <main className="grid w-full max-w-screen-lg grid-cols-3 grid-rows-1 mx-auto">
+    <main className="grid w-full grid-cols-3 grid-rows-1">
       <section className="col-span-2 row-span-full">
         <p className="text-2xl">👋 I'm Sean Groff</p>
         <h1 className="text-3xl">
@@ -47,7 +47,7 @@ function Home({ posts }: Props) {
                           width={682}
                         />
                       )}
-                      <div className="max-w-lg p-6 md:max-w-none">
+                      <div className="max-w-md p-6 md:max-w-none">
                         <div className="text-sm text-gray-600">
                           {formattedDate}
                         </div>

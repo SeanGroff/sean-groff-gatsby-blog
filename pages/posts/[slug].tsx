@@ -47,7 +47,7 @@ function Post({ post }: Props) {
           cardType: 'summary_large_image',
         }}
       />
-      <div className="max-w-screen-md mx-auto">
+      <div className="max-w-screen-lg mx-auto">
         <h1>{title}</h1>
         {/* TODO: Add GitHub Url to edit post */}
         <a href="#" rel="nofollow">

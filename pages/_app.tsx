@@ -11,18 +11,20 @@ import 'tailwindcss/tailwind.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <MDXProvider components={MDXComponents}>
-      <DefaultSeo
-        title="Sean Groff"
-        description="Sean Groff - Web Developer creating awesome content for JavaScript and React"
-      />
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
-      <div className="p-4 antialiased text-gray-900 bg-white">
-        <Component {...pageProps} />
+      <div className="max-w-screen-lg p-4 mx-auto">
+        <DefaultSeo
+          title="Sean Groff"
+          description="Sean Groff - Web Developer creating awesome content for JavaScript and React"
+        />
+        <Head>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Header />
+        <div className="antialiased text-gray-900 bg-white">
+          <Component {...pageProps} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </MDXProvider>
   )
 }
