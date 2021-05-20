@@ -17,19 +17,30 @@ type Props = {
   posts: Post[]
 }
 
+const favoriteBlogPostSlugs = [
+  'useeffect-state-trap',
+  'es-2020',
+  'useReducer',
+  'react-refs',
+  'component-did-catch',
+]
+
 function Home({ posts }: Props) {
   const hydratedPosts = hydrateAllPosts(posts)
+  const favoriteBlogPosts = hydratedPosts.filter((post) =>
+    favoriteBlogPostSlugs.includes(post.slug.split('/')[2])
+  )
 
   return (
-    <main className="grid w-full grid-cols-3 grid-rows-1">
+    <main className="grid w-full grid-cols-3 grid-rows-1 gap-16">
       <section className="col-span-2 row-span-full">
-        <p className="text-2xl">👋 I'm Sean Groff</p>
-        <h1 className="text-3xl">
-          ⚛ I'm a Software Engineering Manager focused on Frontend development
-          with React
+        <p className="pt-8 text-2xl">I'm Sean Groff 👋</p>
+        <h1 className="pt-8 text-3xl capitalize">
+          I'm a Software Engineering Manager focused on React Frontend
+          development
         </h1>
-        <p>👨‍💻 More about what I do</p>
-        <SectionTitle>Recent Blog Posts</SectionTitle>
+        <p className="pt-8">More about what I do</p>
+        <SectionTitle>Blog Posts</SectionTitle>
         <ul className="flex flex-col items-center flex-grow-0 gap-10">
           {hydratedPosts.map((post) => {
             const { frontMatter, emojis, readingTime } = post
@@ -70,6 +81,13 @@ function Home({ posts }: Props) {
       </section>
       <section className="col-span-1 row-span-full">
         <SectionTitle>Favorite Blog Posts</SectionTitle>
+        <ul>
+          {favoriteBlogPosts.map((blogPost) => (
+            <li key={blogPost.slug} className="pb-4 leading-snug">
+              {blogPost.frontMatter.title}
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   )

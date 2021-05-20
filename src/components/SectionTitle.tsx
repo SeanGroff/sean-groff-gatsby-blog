@@ -4,7 +4,7 @@ type Props = {
 
 function SectionTitle({ children }: Props) {
   return (
-    <h2 className="mb-8 font-medium tracking-wider uppercase text-large">
+    <h2 className="my-8 font-medium tracking-wider uppercase text-large">
       {children}
     </h2>
   )
