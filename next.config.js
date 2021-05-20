@@ -7,7 +7,6 @@ module.exports = {
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   }),
   images: {
-    loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/seangroff',
+    domain: 'cloudinary.com',
   },
 }
