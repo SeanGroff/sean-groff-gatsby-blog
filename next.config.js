@@ -6,7 +6,4 @@ module.exports = {
   ...withMDX({
     pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   }),
-  images: {
-    domain: 'cloudinary.com',
-  },
 }

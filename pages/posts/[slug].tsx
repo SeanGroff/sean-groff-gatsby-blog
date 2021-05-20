@@ -3,12 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { NextSeo } from 'next-seo'
 import { TwitterShareButton } from 'react-share'
 import { getAllPostSlugs, getPostData } from '../../src/lib/posts'
-import {
-  baseUrl,
-  cloudinaryUrl,
-  myFullName,
-  twitterUsername,
-} from '../../src/constants'
+import { baseUrl, myFullName, twitterUsername } from '../../src/constants'
 import type { Post as PostType } from '../../src/types'
 
 type Props = {
@@ -21,7 +16,6 @@ function Post({ post }: Props) {
   const titleAndAuthor = `${title} by ${myFullName} ${twitterUsername}`
   const description = post.frontMatter.description
   const featuredImage = post.frontMatter?.featuredImage
-  const cloudinaryImageUrl = `${cloudinaryUrl}/${featuredImage}`
 
   return (
     <article className="max-w-full prose prose-purple">
@@ -34,7 +28,7 @@ function Post({ post }: Props) {
           type: 'website',
           images: [
             {
-              url: cloudinaryImageUrl,
+              url: `/${featuredImage}`,
               width: 800,
               height: 600,
               alt: 'Blog post featured image',
